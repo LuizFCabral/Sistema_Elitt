@@ -1,0 +1,10 @@
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\bin\Debug\Sistema_Elitt.exe.config
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\bin\Debug\Sistema_Elitt.exe
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\bin\Debug\Sistema_Elitt.pdb
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.csproj.AssemblyReference.cache
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.Form1.resources
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.Properties.Resources.resources
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.csproj.GenerateResource.cache
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.csproj.CoreCompileInputs.cache
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.exe
+C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.pdb

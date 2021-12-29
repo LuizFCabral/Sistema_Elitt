@@ -16,5 +16,17 @@ namespace Sistema_Elitt
         {
             InitializeComponent();
         }
+
+        private void btnProd_Click(object sender, EventArgs e)
+        {
+            FProduto f = new FProduto();
+            f.ShowDialog();
+        }
+
+        private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FConsultas f = new FConsultas();
+            f.ShowDialog();
+        }
     }
 }
