@@ -17,6 +17,9 @@ namespace Sistema_Elitt
             InitializeComponent();
         }
 
+
+
+        //Menu
         private void btnProd_Click(object sender, EventArgs e)
         {
             FProduto f = new FProduto();
@@ -28,5 +31,17 @@ namespace Sistema_Elitt
             FConsultas f = new FConsultas();
             f.ShowDialog();
         }
+        //Menu
+
+
+
+
+
+        private void dgvVenda_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
