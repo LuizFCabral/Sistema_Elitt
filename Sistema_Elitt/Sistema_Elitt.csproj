@@ -118,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venda.cs" />
     <Compile Include="VendaDAO.cs" />
+    <EmbeddedResource Include="FConsultas.resx">
+      <DependentUpon>FConsultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
