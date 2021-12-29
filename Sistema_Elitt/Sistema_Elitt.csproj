@@ -110,8 +110,14 @@
     <Compile Include="FConsultas.Designer.cs">
       <DependentUpon>FConsultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemDAO.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Venda.cs" />
+    <Compile Include="VendaDAO.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
