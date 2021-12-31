@@ -157,11 +157,13 @@ namespace Sistema_Elitt
                     obj.setQtde((int)whisper.dreader[3]);
                 }
                 Banco.conexao.Close();
+                if (obj == null)
+                    throw new Exception("Código inexistente.");
                 return (obj);
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao preencher:" + ex.Message);
+                throw new Exception("Erro ao carregar dados pelo código: " + ex.Message);
             }
         }
     }

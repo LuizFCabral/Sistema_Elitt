@@ -110,6 +110,12 @@
     <Compile Include="FConsultas.Designer.cs">
       <DependentUpon>FConsultas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FQtde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQtde.Designer.cs">
+      <DependentUpon>FQtde.cs</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs" />
     <Compile Include="ItemDAO.cs" />
     <Compile Include="Produto.cs" />
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FProduto.resx">
       <DependentUpon>FProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQtde.resx">
+      <DependentUpon>FQtde.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
