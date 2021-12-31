@@ -31,6 +31,28 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao gravar produto: " + ex.Message);
             }
         }
+        public void gravarGetCodigo(Produto obj)  //retorna o código atribuído para o registro gravado
+        {
+            Banco whisper = null; //obj de comunicação com o banco (vem da classe Banco que constrói a conexão e a comunicação com o banco de dados)
+            int cod = 0; // codigo do registro gravado
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Insert into Produto(descr, preco, qtde) values(@d, @p, @q) returning cod";
+                whisper.comando.Parameters.Add("@d", NpgsqlDbType.Varchar).Value = obj.descr;
+                whisper.comando.Parameters.Add("@p", NpgsqlDbType.Double).Value = obj.preco;
+                whisper.comando.Parameters.Add("@q", NpgsqlDbType.Integer).Value = obj.qtde;
+                whisper.comando.Prepare();
+                cod = (int)whisper.comando.ExecuteScalar(); //retorna algum valor (pode ser real, inteiro, etc - por isso o tipo object) gerado pelo banco de dados. Neste caso, esse valor é o código atribuído ao registro gerado pelo banco. 
+                Banco.conexao.Close();
+                obj.setCod(cod);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao gravar: " + ex.Message);
+            }
+
+        }
         public DataTable listar()
         {
             Banco whisper = null;
