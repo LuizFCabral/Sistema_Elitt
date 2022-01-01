@@ -86,6 +86,7 @@ namespace Sistema_Elitt
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(90, 22);
             this.txtTotal.TabIndex = 17;
+            this.txtTotal.TabStop = false;
             this.txtTotal.Text = "00,00";
             // 
             // lblTotal
@@ -126,6 +127,7 @@ namespace Sistema_Elitt
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(68, 33);
             this.btnRemover.TabIndex = 15;
+            this.btnRemover.TabStop = false;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Visible = false;
@@ -137,6 +139,7 @@ namespace Sistema_Elitt
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(100, 22);
             this.txtCodProduto.TabIndex = 1;
+            this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
             // 
             // lblCodProduto
             // 
@@ -171,7 +174,6 @@ namespace Sistema_Elitt
             this.txtDescr.ReadOnly = true;
             this.txtDescr.Size = new System.Drawing.Size(170, 22);
             this.txtDescr.TabIndex = 2;
-            this.txtDescr.TabStop = false;
             // 
             // lblDescr
             // 
@@ -207,6 +209,7 @@ namespace Sistema_Elitt
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(78, 33);
             this.btnBrowse.TabIndex = 3;
+            this.btnBrowse.TabStop = false;
             this.btnBrowse.Text = "Ver produtos";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -234,6 +237,7 @@ namespace Sistema_Elitt
             this.dgvVenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVenda.Size = new System.Drawing.Size(620, 351);
             this.dgvVenda.TabIndex = 15;
+            this.dgvVenda.TabStop = false;
             this.dgvVenda.DoubleClick += new System.EventHandler(this.dgvVenda_DoubleClick);
             // 
             // btnFinalizar

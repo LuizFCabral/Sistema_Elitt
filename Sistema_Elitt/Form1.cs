@@ -16,20 +16,12 @@ namespace Sistema_Elitt
         public Form1()
         {
             InitializeComponent();
+            this.dgvVenda.DefaultCellStyle.Font = new Font("Arial", 15);
             dgvVenda.Columns.Add("codigo", "Código");
             dgvVenda.Columns.Add("descr", "Descrição");
             dgvVenda.Columns.Add("preco", "Preço unitário");
             dgvVenda.Columns.Add("qtde", "Quantidade");
             dgvVenda.Columns.Add("total", "Valor");
-
-            dgvVenda.Rows.Add();
-            linha = dgvVenda.Rows.Count - 1;
-            dgvVenda.Rows[linha].Cells[0].Value = 1;
-            dgvVenda.Rows[linha].Cells[1].Value = "banana";
-            dgvVenda.Rows[linha].Cells[2].Value = "10";
-            dgvVenda.Rows[linha].Cells[3].Value = "4";
-            dgvVenda.Rows[linha].Cells[4].Value = "40";
-
         }
 
 
@@ -139,7 +131,6 @@ namespace Sistema_Elitt
                 f.ShowDialog();
                 if (f.selection)
                 {
-
                     linha = f.dgvListaProdutos.SelectedCells[0].RowIndex;
                     txtCodProduto.Text = f.dgvListaProdutos.Rows[linha].Cells[0].Value.ToString();
                     txtDescr.Text = f.dgvListaProdutos.Rows[linha].Cells[1].Value.ToString();
@@ -169,23 +160,32 @@ namespace Sistema_Elitt
                         if (txtDescr.Text.ToUpper().CompareTo(dgvVenda.Rows[i].Cells[1].Value.ToString().ToUpper()) == 0)
 
                         {
+                            quant = Convert.ToInt32(txtQuant.Text);
                             achou = true;
-                            quant = Convert.ToInt32(dgvVenda.Rows[i].Cells[3].Value);
                             valor = quant * Convert.ToDouble(dgvVenda.Rows[i].Cells[2].Value);
-                            dgvVenda.Rows[i].Cells[3].Value = quant.ToString();
+                            dgvVenda.Rows[i].Cells[3].Value = quant;
                             dgvVenda.Rows[i].Cells[4].Value = valor.ToString();
                             break;
                         }
                     }
                     if (!achou)
                     {
+                        int quantItem;
                         dgvVenda.Rows.Add();
                         linha = dgvVenda.Rows.Count - 1;
                         dgvVenda.Rows[linha].Cells[0].Value = txtCodProduto.Text;
                         dgvVenda.Rows[linha].Cells[1].Value = txtDescr.Text;
                         dgvVenda.Rows[linha].Cells[2].Value = txtValorU.Text;
-                        dgvVenda.Rows[linha].Cells[3].Value = txtQuant.Text;
-                        int quantItem = Convert.ToInt32(txtQuant.Text);
+                        if (txtQuant.Text.Length<=0)
+                        {
+                            dgvVenda.Rows[linha].Cells[3].Value = 1;
+                            quantItem = 1;
+                        }
+                        else
+                        {
+                            dgvVenda.Rows[linha].Cells[3].Value = txtQuant.Text;
+                            quantItem = Convert.ToInt32(txtQuant.Text);
+                        }
                         double valorU = Convert.ToDouble(txtValorU.Text);
                         dgvVenda.Rows[linha].Cells[4].Value = quantItem * valorU;
                     }
@@ -245,6 +245,7 @@ namespace Sistema_Elitt
             dgvVenda.Rows.Remove(dgvVenda.SelectedRows[0]);
             btnRemover.Hide();
             LimparCampos();
+            GimmeTotal();
         }
     }
 }
