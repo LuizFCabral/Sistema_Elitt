@@ -227,10 +227,9 @@ namespace Sistema_Elitt
                     objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
                     daoI.gravar(objI);
                 }
-
                 this.dgvVenda.Rows.Clear();
                 LimparCampos();
-                txtTotal.Clear();
+                GimmeTotal();
                 MessageBox.Show("Venda finalizada com sucesso!");
             }
             catch (Exception ex)

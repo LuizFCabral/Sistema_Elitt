@@ -16,7 +16,7 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into Item(qtde, valor, codprod, codv) values(@q, @v, @cp, cv)";
+                whisper.comando.CommandText = "Insert into Item(qtde, valor, codprod, codv) values(@q, @v, @cp, @cv)";
                 whisper.comando.Parameters.Add("@q", NpgsqlDbType.Integer).Value = obj.qtde;
                 whisper.comando.Parameters.Add("@v", NpgsqlDbType.Double).Value = obj.valor;
                 whisper.comando.Parameters.Add("@cp", NpgsqlDbType.Integer).Value = obj.codProd;
