@@ -35,6 +35,7 @@ namespace Sistema_Elitt
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.gpbItens = new System.Windows.Forms.GroupBox();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.txtCodProduto = new System.Windows.Forms.TextBox();
             this.lblCodProduto = new System.Windows.Forms.Label();
             this.lblValorU = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace Sistema_Elitt
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.dgvVenda = new System.Windows.Forms.DataGridView();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -119,6 +119,18 @@ namespace Sistema_Elitt
             this.gpbItens.TabStop = false;
             this.gpbItens.Text = "Adicionar itens:";
             // 
+            // btnRemover
+            // 
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(124, 176);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(68, 33);
+            this.btnRemover.TabIndex = 15;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Visible = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
             // txtCodProduto
             // 
             this.txtCodProduto.Location = new System.Drawing.Point(80, 41);
@@ -186,16 +198,18 @@ namespace Sistema_Elitt
             this.btnIncluir.TabIndex = 6;
             this.btnIncluir.Text = "+";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(188, 34);
+            this.btnBrowse.Location = new System.Drawing.Point(198, 36);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(78, 33);
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Ver produtos";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // lblQuantidade
             // 
@@ -231,17 +245,7 @@ namespace Sistema_Elitt
             this.btnFinalizar.TabIndex = 14;
             this.btnFinalizar.Text = "Finalizar venda";
             this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(124, 176);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(68, 33);
-            this.btnRemover.TabIndex = 15;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Visible = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // Form1
             // 
