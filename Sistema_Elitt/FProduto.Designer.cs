@@ -45,24 +45,24 @@ namespace Sistema_Elitt
             this.lblCod = new System.Windows.Forms.Label();
             this.btnRemover = new System.Windows.Forms.Button();
             this.gpbSelect = new System.Windows.Forms.GroupBox();
+            this.gpbQtde = new System.Windows.Forms.GroupBox();
+            this.btnAumentar = new System.Windows.Forms.Button();
+            this.nudQtdeSelect = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPrecoSelect = new System.Windows.Forms.TextBox();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.nudQtdeSelect = new System.Windows.Forms.NumericUpDown();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescrSelect = new System.Windows.Forms.TextBox();
             this.btnRecuperar = new System.Windows.Forms.Button();
-            this.gpbQtde = new System.Windows.Forms.GroupBox();
-            this.btnAumentar = new System.Windows.Forms.Button();
             this.gpbCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQtde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.gpbLista.SuspendLayout();
             this.gpbSelect.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQtdeSelect)).BeginInit();
             this.gpbQtde.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQtdeSelect)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbCadastro
@@ -87,7 +87,7 @@ namespace Sistema_Elitt
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(98, 20);
             this.txtPreco.TabIndex = 8;
-            this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
+            this.txtPreco.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPreco_KeyUp);
             // 
             // nudQtde
             // 
@@ -228,6 +228,43 @@ namespace Sistema_Elitt
             this.gpbSelect.TabStop = false;
             this.gpbSelect.Text = "Dados do produto - ";
             // 
+            // gpbQtde
+            // 
+            this.gpbQtde.Controls.Add(this.btnAumentar);
+            this.gpbQtde.Controls.Add(this.nudQtdeSelect);
+            this.gpbQtde.Controls.Add(this.label1);
+            this.gpbQtde.Location = new System.Drawing.Point(6, 89);
+            this.gpbQtde.Name = "gpbQtde";
+            this.gpbQtde.Size = new System.Drawing.Size(188, 67);
+            this.gpbQtde.TabIndex = 11;
+            this.gpbQtde.TabStop = false;
+            // 
+            // btnAumentar
+            // 
+            this.btnAumentar.Location = new System.Drawing.Point(49, 38);
+            this.btnAumentar.Name = "btnAumentar";
+            this.btnAumentar.Size = new System.Drawing.Size(118, 23);
+            this.btnAumentar.TabIndex = 8;
+            this.btnAumentar.Text = "Adicionar unidades";
+            this.btnAumentar.UseVisualStyleBackColor = true;
+            this.btnAumentar.Click += new System.EventHandler(this.btnAumentar_Click);
+            // 
+            // nudQtdeSelect
+            // 
+            this.nudQtdeSelect.Location = new System.Drawing.Point(74, 14);
+            this.nudQtdeSelect.Name = "nudQtdeSelect";
+            this.nudQtdeSelect.Size = new System.Drawing.Size(95, 20);
+            this.nudQtdeSelect.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Quantidade";
+            // 
             // txtPrecoSelect
             // 
             this.txtPrecoSelect.Location = new System.Drawing.Point(77, 63);
@@ -244,13 +281,6 @@ namespace Sistema_Elitt
             this.btnRelatorio.Text = "Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
-            // nudQtdeSelect
-            // 
-            this.nudQtdeSelect.Location = new System.Drawing.Point(74, 14);
-            this.nudQtdeSelect.Name = "nudQtdeSelect";
-            this.nudQtdeSelect.Size = new System.Drawing.Size(95, 20);
-            this.nudQtdeSelect.TabIndex = 7;
-            // 
             // btnAlterar
             // 
             this.btnAlterar.Location = new System.Drawing.Point(207, 66);
@@ -260,15 +290,6 @@ namespace Sistema_Elitt
             this.btnAlterar.Text = "Salvar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Quantidade";
             // 
             // label2
             // 
@@ -305,27 +326,6 @@ namespace Sistema_Elitt
             this.btnRecuperar.UseVisualStyleBackColor = true;
             this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
             // 
-            // gpbQtde
-            // 
-            this.gpbQtde.Controls.Add(this.btnAumentar);
-            this.gpbQtde.Controls.Add(this.nudQtdeSelect);
-            this.gpbQtde.Controls.Add(this.label1);
-            this.gpbQtde.Location = new System.Drawing.Point(6, 89);
-            this.gpbQtde.Name = "gpbQtde";
-            this.gpbQtde.Size = new System.Drawing.Size(188, 67);
-            this.gpbQtde.TabIndex = 11;
-            this.gpbQtde.TabStop = false;
-            // 
-            // btnAumentar
-            // 
-            this.btnAumentar.Location = new System.Drawing.Point(49, 38);
-            this.btnAumentar.Name = "btnAumentar";
-            this.btnAumentar.Size = new System.Drawing.Size(118, 23);
-            this.btnAumentar.TabIndex = 8;
-            this.btnAumentar.Text = "Adicionar unidades";
-            this.btnAumentar.UseVisualStyleBackColor = true;
-            this.btnAumentar.Click += new System.EventHandler(this.btnAumentar_Click);
-            // 
             // FProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,9 +347,9 @@ namespace Sistema_Elitt
             this.gpbLista.PerformLayout();
             this.gpbSelect.ResumeLayout(false);
             this.gpbSelect.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQtdeSelect)).EndInit();
             this.gpbQtde.ResumeLayout(false);
             this.gpbQtde.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQtdeSelect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

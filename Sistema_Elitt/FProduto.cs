@@ -100,7 +100,7 @@ namespace Sistema_Elitt
                             break;
                         }
                     }
-                    if (achou)
+                    if(achou)
                     {
                         DialogResult r = MessageBox.Show("Já existe um produto cadastrado com a descrição '" + descr + "'. Deseja utilizar essa descrição novamente?",
                             "Descrição já em uso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -200,27 +200,31 @@ namespace Sistema_Elitt
                 }
                 else
                 {
-                    bool achou = false, prosseguir = true;
-                    for (int i = 0; i < dgvProdutos.Rows.Count; i++)
+                    bool prosseguir = true;
+                    if (!descr.Trim().Equals(pAtual.descr.Trim()))
                     {
-                        if (dgvProdutos.Rows[i].Cells[1].Value.ToString().Equals(descr))
+                        bool achou = false;
+                        for (int i = 0; i < dgvProdutos.Rows.Count; i++)
                         {
-                            achou = true;
-                            prosseguir = false;
-                            break;
+                            if (dgvProdutos.Rows[i].Cells[1].Value.ToString().Equals(descr))
+                            {
+                                achou = true;
+                                prosseguir = false;
+                                break;
+                            }
                         }
-                    }
-                    if (achou)
-                    {
-                        DialogResult r = MessageBox.Show("Já existe um produto cadastrado com a descrição '" + descr + "'. Deseja utilizar essa descrição novamente?",
-                            "Descrição já em uso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                        if (r.Equals(DialogResult.Yes))
+                        if (achou)
                         {
-                            prosseguir = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Operação cancelada.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DialogResult r = MessageBox.Show("Já existe um produto cadastrado com a descrição '" + descr + "'. Deseja utilizar essa descrição novamente?",
+                                "Descrição já em uso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if (r.Equals(DialogResult.Yes))
+                            {
+                                prosseguir = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Operação cancelada.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                     }
                     if (prosseguir)
@@ -261,48 +265,13 @@ namespace Sistema_Elitt
                 MessageBox.Show("Erro ao remover produto: " + ex.Message);
             }
         }
-        private string validarNumInt(string t)
+        private string validarNumInt(string t, int i)
         {
-            try
-            {
-                if (!Int32.TryParse(t, out int r))
-                {
-                    t = t.Substring(0, t.Length - 1);
-                }
-                return t;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na validação do valor numérico inteiro positivo inserido: " + ex.Message);
-            }
+            return null;
         }
-        private string validarNumRac(string t)
+        private string validarNumRac(string t, int i)
         {
-            try
-            {
-
-                if (!Double.TryParse(t, out double r))
-                {
-                    t = t.Substring(0, t.Length - 1);
-                }
-                return t;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na validação do valor numérico racional positivo inserido: " + ex.Message);
-            }
-        }
-
-        private void txtPreco_KeyPress(object sender, KeyPressEventArgs e)
-        {// n funcional
-            try
-            {
-                txtPreco.Text = validarNumRac(txtPreco.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao inserir valor no campo: " + ex.Message);
-            }
+            return null;
         }
 
         private void btnAumentar_Click(object sender, EventArgs e)
@@ -316,6 +285,10 @@ namespace Sistema_Elitt
                 if (f.q > 0)
                     MessageBox.Show(f.q + " unidades de " + f.obj.descr + " adicionadas com sucesso.");
             }
+        }
+
+        private void txtPreco_KeyUp(object sender, KeyEventArgs e)
+        {
         }
     }
 }
