@@ -217,6 +217,7 @@ namespace Sistema_Elitt
                 objV.setDataV(DateTime.Now);
                 objV.setTotal(txtTotal.Text);
                 daoV = new VendaDAO();
+                daoV.gravarGetCodigo(objV);
 
                 daoI = new ItemDAO();
                 daoP = new ProdutoDAO();
@@ -225,17 +226,16 @@ namespace Sistema_Elitt
                 {
                     objI = new Item();
                     objP = new Produto();
-                    daoV.gravarGetCodigo(objV);
                     objI.setCodV(objV.cod);
                     objI.setCodProd(dgvVenda.Rows[i].Cells[0].Value.ToString());
                     objI.setValor(dgvVenda.Rows[i].Cells[2].Value.ToString());
                     objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
-                    
+                    daoI.gravar(objI);
+
                     objP.setCod(objI.codProd);
                     qtdeAntigo = daoP.buscarQtde(objP.cod);
                     objP.setQtde(qtdeAntigo - objI.qtde);
-
-                    daoI.gravar(objI);
+                    
                     daoP.alterarQtde(objP);
                 }
                 this.dgvVenda.Rows.Clear();
@@ -256,6 +256,13 @@ namespace Sistema_Elitt
             btnRemover.Hide();
             LimparCampos();
             GimmeTotal();
+        }
+
+        private void txtQuant_Leave(object sender, EventArgs e)
+        {
+            Produto objP;
+            ProdutoDAO daoP;
+            int qtdeAntigo;
         }
     }
 }

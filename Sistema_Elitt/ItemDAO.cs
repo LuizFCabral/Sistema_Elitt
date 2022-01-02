@@ -40,7 +40,7 @@ namespace Sistema_Elitt
                 whisper = new Banco();
                 whisper.comando.CommandText = "Select p.descr, i.qtde, i.valor, i.qtde*i.valor from Item i "
                     + "INNER JOIN Produto p on i.codprod = p.cod "
-                    +"where i.codv = @cv";
+                    + "where i.codv = @cv";
                 whisper.comando.Parameters.Add("@cv", NpgsqlDbType.Integer).Value = codV;
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();

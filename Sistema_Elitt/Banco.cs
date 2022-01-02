@@ -21,7 +21,7 @@ namespace Sistema_Elitt
             {
                 if ((conexao == null) || (conexao.State != ConnectionState.Open))
                 {
-                    conexao = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;Password=pedro5012;Database=ELITT;");
+                    conexao = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;Password=mariagorete;Database=ELITT;");
                     conexao.Open();
                 }
                 comando = new NpgsqlCommand();

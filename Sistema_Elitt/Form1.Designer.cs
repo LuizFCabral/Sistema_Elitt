@@ -194,6 +194,7 @@ namespace Sistema_Elitt
             this.txtQuant.Name = "txtQuant";
             this.txtQuant.Size = new System.Drawing.Size(170, 22);
             this.txtQuant.TabIndex = 3;
+            this.txtQuant.Leave += new System.EventHandler(this.txtQuant_Leave);
             // 
             // btnIncluir
             // 
