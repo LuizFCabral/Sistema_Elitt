@@ -18,7 +18,7 @@ namespace Sistema_Elitt
         {
             InitializeComponent();
             dao = new ProdutoDAO();
-            dgvListaProdutos.DataSource = dao.listar();
+            dgvListaProdutos.DataSource = dao.listar(false);
 
             selection = false;
         }
@@ -36,12 +36,12 @@ namespace Sistema_Elitt
             {
                 if (txtPesquisa.Text.Length > 0)
                 {
-                    dgvListaProdutos.DataSource = dao.buscarParteDescr(txtPesquisa.Text);
+                    dgvListaProdutos.DataSource = dao.buscarParteDescr(txtPesquisa.Text, false);
                     selection = false;
                 }
                 else
                 {
-                    dgvListaProdutos.DataSource = dao.listar();
+                    dgvListaProdutos.DataSource = dao.listar(false);
                     selection = false;
                 }
             }

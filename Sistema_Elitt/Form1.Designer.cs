@@ -115,7 +115,7 @@ namespace Sistema_Elitt
             this.gpbItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbItens.Location = new System.Drawing.Point(12, 40);
             this.gpbItens.Name = "gpbItens";
-            this.gpbItens.Size = new System.Drawing.Size(298, 273);
+            this.gpbItens.Size = new System.Drawing.Size(298, 351);
             this.gpbItens.TabIndex = 16;
             this.gpbItens.TabStop = false;
             this.gpbItens.Text = "Adicionar itens:";
@@ -123,7 +123,7 @@ namespace Sistema_Elitt
             // btnRemover
             // 
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(124, 176);
+            this.btnRemover.Location = new System.Drawing.Point(130, 297);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(68, 33);
             this.btnRemover.TabIndex = 15;
@@ -135,7 +135,7 @@ namespace Sistema_Elitt
             // 
             // txtCodProduto
             // 
-            this.txtCodProduto.Location = new System.Drawing.Point(80, 41);
+            this.txtCodProduto.Location = new System.Drawing.Point(22, 67);
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(100, 22);
             this.txtCodProduto.TabIndex = 1;
@@ -146,47 +146,51 @@ namespace Sistema_Elitt
             this.lblCodProduto.AutoSize = true;
             this.lblCodProduto.Location = new System.Drawing.Point(19, 44);
             this.lblCodProduto.Name = "lblCodProduto";
-            this.lblCodProduto.Size = new System.Drawing.Size(55, 16);
+            this.lblCodProduto.Size = new System.Drawing.Size(52, 16);
             this.lblCodProduto.TabIndex = 14;
-            this.lblCodProduto.Text = "Código:";
+            this.lblCodProduto.Text = "Código";
             // 
             // lblValorU
             // 
             this.lblValorU.AutoSize = true;
-            this.lblValorU.Location = new System.Drawing.Point(19, 143);
+            this.lblValorU.Location = new System.Drawing.Point(19, 213);
             this.lblValorU.Name = "lblValorU";
-            this.lblValorU.Size = new System.Drawing.Size(89, 16);
+            this.lblValorU.Size = new System.Drawing.Size(86, 16);
             this.lblValorU.TabIndex = 12;
-            this.lblValorU.Text = "Valor unitário:";
+            this.lblValorU.Text = "Valor unitário";
             // 
             // txtValorU
             // 
-            this.txtValorU.Location = new System.Drawing.Point(111, 141);
+            this.txtValorU.Enabled = false;
+            this.txtValorU.Location = new System.Drawing.Point(22, 232);
             this.txtValorU.Name = "txtValorU";
             this.txtValorU.ReadOnly = true;
             this.txtValorU.Size = new System.Drawing.Size(170, 22);
             this.txtValorU.TabIndex = 4;
+            this.txtValorU.TabStop = false;
             // 
             // txtDescr
             // 
-            this.txtDescr.Location = new System.Drawing.Point(111, 86);
+            this.txtDescr.Enabled = false;
+            this.txtDescr.Location = new System.Drawing.Point(22, 121);
             this.txtDescr.Name = "txtDescr";
             this.txtDescr.ReadOnly = true;
             this.txtDescr.Size = new System.Drawing.Size(170, 22);
             this.txtDescr.TabIndex = 2;
+            this.txtDescr.TabStop = false;
             // 
             // lblDescr
             // 
             this.lblDescr.AutoSize = true;
-            this.lblDescr.Location = new System.Drawing.Point(19, 92);
+            this.lblDescr.Location = new System.Drawing.Point(19, 102);
             this.lblDescr.Name = "lblDescr";
-            this.lblDescr.Size = new System.Drawing.Size(73, 16);
+            this.lblDescr.Size = new System.Drawing.Size(70, 16);
             this.lblDescr.TabIndex = 4;
-            this.lblDescr.Text = "Descrição:";
+            this.lblDescr.Text = "Descrição";
             // 
             // txtQuant
             // 
-            this.txtQuant.Location = new System.Drawing.Point(111, 115);
+            this.txtQuant.Location = new System.Drawing.Point(22, 175);
             this.txtQuant.Name = "txtQuant";
             this.txtQuant.Size = new System.Drawing.Size(170, 22);
             this.txtQuant.TabIndex = 3;
@@ -194,7 +198,7 @@ namespace Sistema_Elitt
             // btnIncluir
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(198, 176);
+            this.btnIncluir.Location = new System.Drawing.Point(204, 297);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(68, 33);
             this.btnIncluir.TabIndex = 6;
@@ -205,7 +209,7 @@ namespace Sistema_Elitt
             // btnBrowse
             // 
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(198, 36);
+            this.btnBrowse.Location = new System.Drawing.Point(204, 62);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(78, 33);
             this.btnBrowse.TabIndex = 3;
@@ -217,11 +221,11 @@ namespace Sistema_Elitt
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(19, 118);
+            this.lblQuantidade.Location = new System.Drawing.Point(18, 156);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(81, 16);
+            this.lblQuantidade.Size = new System.Drawing.Size(78, 16);
             this.lblQuantidade.TabIndex = 5;
-            this.lblQuantidade.Text = "Quantidade:";
+            this.lblQuantidade.Text = "Quantidade";
             // 
             // dgvVenda
             // 

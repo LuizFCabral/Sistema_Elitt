@@ -31,6 +31,7 @@ namespace Sistema_Elitt
         {
             this.dgvListaProdutos = new System.Windows.Forms.DataGridView();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.lblPesquisa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,11 +59,21 @@ namespace Sistema_Elitt
             this.txtPesquisa.TabIndex = 2;
             this.txtPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyUp);
             // 
+            // lblPesquisa
+            // 
+            this.lblPesquisa.AutoSize = true;
+            this.lblPesquisa.Location = new System.Drawing.Point(12, 34);
+            this.lblPesquisa.Name = "lblPesquisa";
+            this.lblPesquisa.Size = new System.Drawing.Size(140, 13);
+            this.lblPesquisa.TabIndex = 10;
+            this.lblPesquisa.Text = "🔎 Pesquisar pela descrição";
+            // 
             // FConsultarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 375);
+            this.Controls.Add(this.lblPesquisa);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvListaProdutos);
             this.Name = "FConsultarProdutos";
@@ -77,5 +88,6 @@ namespace Sistema_Elitt
 
         public System.Windows.Forms.DataGridView dgvListaProdutos;
         private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Label lblPesquisa;
     }
 }

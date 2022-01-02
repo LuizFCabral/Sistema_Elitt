@@ -16,7 +16,7 @@ namespace Sistema_Elitt
         public Form1()
         {
             InitializeComponent();
-            this.dgvVenda.DefaultCellStyle.Font = new Font("Arial", 15);
+            this.dgvVenda.DefaultCellStyle.Font = new Font("Arial", 10);
             dgvVenda.Columns.Add("codigo", "Código");
             dgvVenda.Columns.Add("descr", "Descrição");
             dgvVenda.Columns.Add("preco", "Preço unitário");
@@ -114,6 +114,7 @@ namespace Sistema_Elitt
                 txtCodProduto.Text = dgvVenda.Rows[linha].Cells[0].Value.ToString();
                 txtDescr.Text = dgvVenda.Rows[linha].Cells[1].Value.ToString();
                 txtValorU.Text = dgvVenda.Rows[linha].Cells[2].Value.ToString();
+                txtQuant.Text = dgvVenda.Rows[linha].Cells[3].Value.ToString();
                 btnRemover.Show();
             }
             catch (Exception ex)
@@ -192,6 +193,7 @@ namespace Sistema_Elitt
                     GimmeTotal();
                 }
                 LimparCampos();
+                txtCodProduto.Focus();
             }
 
             catch (Exception ex)
@@ -206,7 +208,9 @@ namespace Sistema_Elitt
             VendaDAO daoV;
             Item objI;
             ItemDAO daoI;
-            int i;
+            Produto objP;
+            ProdutoDAO daoP;
+            int i, qtdeAntigo;
             try
             {
                 objV = new Venda();
@@ -214,18 +218,25 @@ namespace Sistema_Elitt
                 objV.setTotal(txtTotal.Text);
                 daoV = new VendaDAO();
 
-                daoV.gravarGetCodigo(objV);
-
                 daoI = new ItemDAO();
+                daoP = new ProdutoDAO();
 
                 for (i = 0; i < dgvVenda.Rows.Count; i++)
                 {
                     objI = new Item();
+                    objP = new Produto();
+                    daoV.gravarGetCodigo(objV);
                     objI.setCodV(objV.cod);
                     objI.setCodProd(dgvVenda.Rows[i].Cells[0].Value.ToString());
                     objI.setValor(dgvVenda.Rows[i].Cells[2].Value.ToString());
                     objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
+                    
+                    objP.setCod(objI.codProd);
+                    qtdeAntigo = daoP.buscarQtde(objP.cod);
+                    objP.setQtde(qtdeAntigo - objI.qtde);
+
                     daoI.gravar(objI);
+                    daoP.alterarQtde(objP);
                 }
                 this.dgvVenda.Rows.Clear();
                 LimparCampos();

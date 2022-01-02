@@ -41,11 +41,11 @@ namespace Sistema_Elitt
                 dao = new ProdutoDAO();
                 if(pesquisa.Length == 0)
                 {
-                    r = dao.listar();
+                    r = dao.listar(true);
                 }
                 else
                 {
-                    r = dao.buscarParteDescr(pesquisa);
+                    r = dao.buscarParteDescr(pesquisa, true);
                 }
                 r.Columns[0].ColumnName = "Código";
                 r.Columns[1].ColumnName = "Descrição";

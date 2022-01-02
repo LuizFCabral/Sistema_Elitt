@@ -53,14 +53,18 @@ namespace Sistema_Elitt
             }
 
         }
-        public DataTable listar()
+        public DataTable listar(bool qtdeVazia)
         {
             Banco whisper = null;
-
+            string busca = "";
+               
             try
             {
+                if (!qtdeVazia)
+                    busca = " where qtde > 0";
+
                 whisper = new Banco();
-                whisper.comando.CommandText = "Select cod, descr, preco, qtde from produto";
+                whisper.comando.CommandText = "Select cod, descr, preco, qtde from produto" + busca;
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();
                 whisper.tabela.Load(whisper.dreader);
@@ -72,6 +76,7 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao listar produto: " + ex.Message);
             }
         }
+
         public int alterar(Produto obj)
         {
             Banco whisper = null;
@@ -95,6 +100,29 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao alterar produto: " + ex.Message);
             }
         }
+
+        public int alterarQtde(Produto obj)
+        {
+            Banco whisper = null;
+            int qtde = 0;
+
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Update produto set qtde=@q where cod=@cod";
+                whisper.comando.Parameters.Add("@q", NpgsqlDbType.Integer).Value = obj.qtde;
+                whisper.comando.Parameters.Add("@cod", NpgsqlDbType.Integer).Value = obj.cod;
+                whisper.comando.Prepare();
+                qtde = whisper.comando.ExecuteNonQuery();
+                Banco.conexao.Close();
+                return (qtde);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao alterar quantidade do produto: " + ex.Message);
+            }
+        }
+
         public int remover(int cod)
         {
             Banco whisper;
@@ -115,14 +143,18 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao remover produto:" + ex.Message);
             }
         }
-        public DataTable buscarParteDescr(string parte)
+        public DataTable buscarParteDescr(string parte, bool qtdeVazia)
         {
             Banco whisper = null;
+            string busca = "";
 
             try
             {
+                if (!qtdeVazia)
+                    busca = " and qtde > 0";
+
                 whisper = new Banco();
-                whisper.comando.CommandText = "Select cod, descr, preco, qtde from Produto where descr ilike @dica"; //like: casesensitive ilike: non casesensitive
+                whisper.comando.CommandText = "Select cod, descr, preco, qtde from Produto where descr ilike @dica" + busca; //like: casesensitive ilike: non casesensitive
                 whisper.comando.Parameters.Add("@dica", NpgsqlDbType.Varchar).Value = "%" + parte + "%";
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();
@@ -135,6 +167,27 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao buscar por parte da descrição: " + ex.Message);
             }
         }
+
+        public int buscarQtde(int cod)
+        {
+            Banco whisper = null;
+            int qtde;
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select qtde from Produto where cod=@cod"; 
+                whisper.comando.Parameters.Add("@cod", NpgsqlDbType.Integer).Value = cod;
+                whisper.comando.Prepare();
+                qtde = (int)whisper.comando.ExecuteScalar();
+                Banco.conexao.Close();
+                return (qtde);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao buscar a quantidade do produto: " + ex.Message);
+            }
+        }
+
         public Produto preencher(int cod)
         {
             Banco whisper;
