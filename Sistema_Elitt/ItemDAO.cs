@@ -1,6 +1,7 @@
 ﻿using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,5 +32,31 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao gravar item: " + ex.Message);
             }
         }
+        public DataTable listarCodVenda(int codV)
+        {
+            Banco whisper = null;
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select p.descr, i.qtde, i.valor, i.qtde*i.valor from Item i "
+                    + "INNER JOIN Produto p on i.codprod = p.cod "
+                    +"where i.codv = @cv";
+                whisper.comando.Parameters.Add("@cv", NpgsqlDbType.Integer).Value = codV;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Descrição";
+                whisper.tabela.Columns[1].ColumnName = "N. de unidades";
+                whisper.tabela.Columns[2].ColumnName = "Valor un.";
+                whisper.tabela.Columns[3].ColumnName = "Subtotal do item";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar itens da venda de código " + codV + ": " + ex.Message);
+            }
+        }
+
     }
 }
