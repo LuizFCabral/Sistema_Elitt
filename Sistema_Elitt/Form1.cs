@@ -12,7 +12,8 @@ namespace Sistema_Elitt
 {
     public partial class Form1 : Form
     {
-        public int linha;
+        private int linha;
+        private int qtde;
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +78,7 @@ namespace Sistema_Elitt
                     {
                         txtDescr.Text = obj.descr;
                         txtValorU.Text = obj.preco.ToString();
+                        qtde = dao.buscarQtde(cod);
                     }
                     else
                     {
@@ -136,7 +138,7 @@ namespace Sistema_Elitt
                     txtCodProduto.Text = f.dgvListaProdutos.Rows[linha].Cells[0].Value.ToString();
                     txtDescr.Text = f.dgvListaProdutos.Rows[linha].Cells[1].Value.ToString();
                     txtValorU.Text = f.dgvListaProdutos.Rows[linha].Cells[2].Value.ToString();
-
+                    qtde = Convert.ToInt32(f.dgvListaProdutos.Rows[linha].Cells[3].Value);
                 }
             }
             catch (Exception ex)
@@ -260,9 +262,15 @@ namespace Sistema_Elitt
 
         private void txtQuant_Leave(object sender, EventArgs e)
         {
-            Produto objP;
-            ProdutoDAO daoP;
-            int qtdeAntigo;
+            if (txtQuant.Text.Length > 0)
+            {
+                int qtdeAgr = Convert.ToInt32(txtQuant.Text);
+                if (qtdeAgr > qtde)
+                {
+                    MessageBox.Show("A quantidade colocada não condiz com o estoque e foi alterada");
+                    txtQuant.Text = qtde.ToString();
+                }
+            }
         }
     }
 }

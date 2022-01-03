@@ -135,12 +135,14 @@ namespace Sistema_Elitt
         private void txtPesquisa_KeyUp(object sender, KeyEventArgs e)
         {
             string pesquisa;
-            ProdutoDAO dao;
             try
             {
                 pesquisa = txtPesquisa.Text.Trim();
-                atualizarLista(pesquisa);
-                pesquisaAtual = pesquisa;
+                if (pesquisa.Length > 0 )
+                {
+                    atualizarLista(pesquisa);
+                    pesquisaAtual = pesquisa;
+                }
             }
             catch (Exception ex)
             {
