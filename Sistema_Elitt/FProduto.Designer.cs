@@ -280,6 +280,7 @@ namespace Sistema_Elitt
             this.btnRelatorio.TabIndex = 10;
             this.btnRelatorio.Text = "Relatório";
             this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
             // 
             // btnAlterar
             // 

@@ -10,15 +10,16 @@ namespace Sistema_Elitt
     {
         /*create table item (
 	cod serial primary key,
+	descr varchar(50),
 	qtde int,
 	valor float,
 	codprod int not null,
 	codv int not null,
-	constraint ri01 foreign key(codprod) references prod(cod) on update cascade,
-	constraint ri02 foreign key(codv) references V(cod) on update cascade
+	constraint ri01 foreign key(codv) references venda(cod) on update cascade
 ); */
 
         public int cod { get; private set; }
+	public string descr { get; private set; }
         public int qtde { get; private set; }
         public double valor { get; private set; }
         public int codProd { get; private set; }
@@ -39,6 +40,10 @@ namespace Sistema_Elitt
 
                 throw new Exception("Erro no setCod: " + ex.Message);
             }
+        }
+	public void setDescr(string d)
+        {
+            this.descr = d;
         }
         public void setQtde(int q)
         {

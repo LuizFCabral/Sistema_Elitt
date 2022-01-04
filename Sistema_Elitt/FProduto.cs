@@ -278,19 +278,41 @@ namespace Sistema_Elitt
 
         private void btnAumentar_Click(object sender, EventArgs e)
         {
-            FQtde f = new FQtde();
-            f.ShowDialog();
-            if(f.feito)
+            FQtde f;
+            try
             {
-                atualizarLista(pesquisaAtual);
-                mostrarSelecao(f.obj);
-                if (f.q > 0)
-                    MessageBox.Show(f.q + " unidades de " + f.obj.descr + " adicionadas com sucesso.");
+                f = new FQtde();
+                f.ShowDialog();
+                if (f.feito)
+                {
+                    atualizarLista(pesquisaAtual);
+                    mostrarSelecao(f.obj);
+                    if (f.q > 0)
+                        MessageBox.Show(f.q + " unidades de " + f.obj.descr + " adicionadas com sucesso.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar unidades ao produto: " + ex.Message);
             }
         }
 
         private void txtPreco_KeyUp(object sender, KeyEventArgs e)
         {
+        }
+
+        private void btnRelatorio_Click(object sender, EventArgs e)
+        {
+            FConsultaGraf f;
+            try
+            {
+                f = new FConsultaGraf();
+                f.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao acessar relatórios do produto " + pAtual.descr + " : " + ex.Message);
+            }
         }
     }
 }

@@ -1,0 +1,22 @@
+create table produto (
+	cod serial primary key,
+	descr varchar(50),
+	preco float,
+	qtde int
+);
+
+create table venda(
+	cod serial primary key,
+	total float,
+	datav timestamp
+);
+
+create table item (
+	cod serial primary key,
+	descr varchar(50),
+	qtde int,
+	valor float,
+	codprod int not null,
+	codv int not null,
+	constraint ri01 foreign key(codv) references venda(cod) on update cascade
+);

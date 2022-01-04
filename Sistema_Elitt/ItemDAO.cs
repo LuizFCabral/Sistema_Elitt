@@ -17,7 +17,8 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into Item(qtde, valor, codprod, codv) values(@q, @v, @cp, @cv)";
+                whisper.comando.CommandText = "Insert into Item(descr, qtde, valor, codprod, codv) values(@d, @q, @v, @cp, @cv)";
+                whisper.comando.Parameters.Add("@d", NpgsqlDbType.Varchar).Value = obj.descr;
                 whisper.comando.Parameters.Add("@q", NpgsqlDbType.Integer).Value = obj.qtde;
                 whisper.comando.Parameters.Add("@v", NpgsqlDbType.Double).Value = obj.valor;
                 whisper.comando.Parameters.Add("@cp", NpgsqlDbType.Integer).Value = obj.codProd;
@@ -38,9 +39,32 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Select p.descr, i.qtde, i.valor, i.qtde*i.valor from Item i "
-                    + "INNER JOIN Produto p on i.codprod = p.cod "
-                    + "where i.codv = @cv";
+                whisper.comando.CommandText = "Select descr, qtde, valor, qtde*valor from Item "
+                    + "where codv = @cv";
+                whisper.comando.Parameters.Add("@cv", NpgsqlDbType.Integer).Value = codV;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Descrição";
+                whisper.tabela.Columns[1].ColumnName = "N. de unidades";
+                whisper.tabela.Columns[2].ColumnName = "Valor un.";
+                whisper.tabela.Columns[3].ColumnName = "Subtotal do item";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar itens da venda de código " + codV + ": " + ex.Message);
+            }
+        }
+        public DataTable listarItensProdPeriodo(int codP, DateTime inicio, DateTime fim)
+        {
+            Banco whisper = null;
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select descr, qtde, valor, qtde*valor from Item "
+                    + "where codv = @cv";
                 whisper.comando.Parameters.Add("@cv", NpgsqlDbType.Integer).Value = codV;
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();
