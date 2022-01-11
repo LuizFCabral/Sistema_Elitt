@@ -35,7 +35,9 @@ namespace Sistema_Elitt
             this.chtProdAno = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.txtAno = new System.Windows.Forms.TextBox();
             this.lblAno = new System.Windows.Forms.Label();
+            this.dgvResultados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.chtProdAno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             this.SuspendLayout();
             // 
             // chtProdAno
@@ -70,17 +72,35 @@ namespace Sistema_Elitt
             this.lblAno.TabIndex = 2;
             this.lblAno.Text = "Ano do relatório gráfico:";
             // 
+            // dgvResultados
+            // 
+            this.dgvResultados.AllowUserToAddRows = false;
+            this.dgvResultados.AllowUserToDeleteRows = false;
+            this.dgvResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResultados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultados.Location = new System.Drawing.Point(417, 87);
+            this.dgvResultados.Name = "dgvResultados";
+            this.dgvResultados.ReadOnly = true;
+            this.dgvResultados.RowHeadersVisible = false;
+            this.dgvResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResultados.Size = new System.Drawing.Size(231, 186);
+            this.dgvResultados.TabIndex = 17;
+            this.dgvResultados.Visible = false;
+            // 
             // FConsultaGraf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvResultados);
             this.Controls.Add(this.lblAno);
             this.Controls.Add(this.txtAno);
             this.Controls.Add(this.chtProdAno);
             this.Name = "FConsultaGraf";
             this.Text = "FConsultaGraf";
             ((System.ComponentModel.ISupportInitialize)(this.chtProdAno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,5 +111,6 @@ namespace Sistema_Elitt
         private System.Windows.Forms.DataVisualization.Charting.Chart chtProdAno;
         private System.Windows.Forms.TextBox txtAno;
         private System.Windows.Forms.Label lblAno;
+        private System.Windows.Forms.DataGridView dgvResultados;
     }
 }

@@ -17,7 +17,9 @@ namespace Sistema_Elitt
         {
             InitializeComponent();
             Produto obj;
-
+            ItemDAO dao;
+            DataTable dt;
+            String[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
             try
             {
                 obj = FProduto.pAtual; //captura o produto do formulário anterior
@@ -33,6 +35,22 @@ namespace Sistema_Elitt
                 chtProdAno.Series[0].Name = "Unidades"; // nome da série
                 chtProdAno.Series[0].ChartType = SeriesChartType.Column; //como são mostrados os dados
 
+                dao = new ItemDAO();
+                DateTime inicio = new DateTime(2022, 1, 1);
+                DateTime fim = new DateTime(2022, 12, 31);
+                dt = dao.quantidadeVendidaMes(obj.cod, inicio, fim);
+                int atual;
+                dgvResultados.DataSource = dt;
+                for (int i = 0; i < dgvResultados.Rows.Count; i++)
+                {
+                    atual = (int)dgvResultados.Rows[i].Cells[0].Value;
+                    chtProdAno.Series[0].Points.Add(new DataPoint
+                    {
+                        YValues = new double[] { atual },  //valor
+                        AxisLabel = meses[i]   //legenda da coluna
+                    });
+
+                }
             }
             catch (Exception ex)
             {

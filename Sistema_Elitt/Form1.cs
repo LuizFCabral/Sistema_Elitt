@@ -230,6 +230,7 @@ namespace Sistema_Elitt
                     objP = new Produto();
                     objI.setCodV(objV.cod);
                     objI.setCodProd(dgvVenda.Rows[i].Cells[0].Value.ToString());
+                    objI.setDescr(dgvVenda.Rows[i].Cells[1].Value.ToString());
                     objI.setValor(dgvVenda.Rows[i].Cells[2].Value.ToString());
                     objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
                     daoI.gravar(objI);

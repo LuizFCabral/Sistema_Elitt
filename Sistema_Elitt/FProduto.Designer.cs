@@ -92,6 +92,11 @@ namespace Sistema_Elitt
             // nudQtde
             // 
             this.nudQtde.Location = new System.Drawing.Point(75, 81);
+            this.nudQtde.Maximum = new decimal(new int[] {
+            -1304428544,
+            434162106,
+            542,
+            0});
             this.nudQtde.Name = "nudQtde";
             this.nudQtde.Size = new System.Drawing.Size(95, 20);
             this.nudQtde.TabIndex = 7;
@@ -252,6 +257,11 @@ namespace Sistema_Elitt
             // nudQtdeSelect
             // 
             this.nudQtdeSelect.Location = new System.Drawing.Point(74, 14);
+            this.nudQtdeSelect.Maximum = new decimal(new int[] {
+            1241513984,
+            370409800,
+            542101,
+            0});
             this.nudQtdeSelect.Name = "nudQtdeSelect";
             this.nudQtdeSelect.Size = new System.Drawing.Size(95, 20);
             this.nudQtdeSelect.TabIndex = 7;

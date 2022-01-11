@@ -84,3 +84,4 @@ C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\
 C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.FQtde.resources
 C:\Users\super\OneDrive\Documentos\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.csproj.CopyComplete
 C:\Users\Pedro\source\repos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.FConsultarProdutos.resources
+C:\Users\Pedro\source\repos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.FConsultaGraf.resources
