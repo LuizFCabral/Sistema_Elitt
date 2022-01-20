@@ -32,6 +32,16 @@ namespace Sistema_Elitt
                 MessageBox.Show("Erro na inicialização da tela: " + ex.Message);
             }
         }
+        //Limpar campos
+        public void LimparCampos()
+        {
+            txtDescr.Clear();
+            txtPreco.Clear();
+            nudQtde.ResetText();
+        }
+
+        //Limpar campos
+
         private void atualizarLista(string pesquisa)
         {
             DataTable r;
@@ -52,6 +62,7 @@ namespace Sistema_Elitt
                 r.Columns[2].ColumnName = "Preço";
                 r.Columns[3].ColumnName = "Quantidade";
                 dgvProdutos.DataSource = r;
+                LimparCampos();
             }
             catch(Exception ex)
             {
@@ -123,6 +134,9 @@ namespace Sistema_Elitt
                         dao.gravarGetCodigo(obj);
                         atualizarLista(pesquisaAtual);
                         MessageBox.Show("Produto " + obj.descr + " foi cadastrado com sucesso. Código: " + obj.cod);
+
+                        LimparCampos();
+                        txtDescr.Focus();
                     }
                 }
             }

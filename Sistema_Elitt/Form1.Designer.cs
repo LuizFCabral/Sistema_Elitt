@@ -48,6 +48,10 @@ namespace Sistema_Elitt
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.dgvVenda = new System.Windows.Forms.DataGridView();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.txtRecebido = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTroco = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -60,7 +64,7 @@ namespace Sistema_Elitt
             this.btnConsulta});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(960, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(997, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,11 +84,11 @@ namespace Sistema_Elitt
             // 
             // txtTotal
             // 
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(744, 404);
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(678, 404);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(90, 22);
+            this.txtTotal.Size = new System.Drawing.Size(90, 26);
             this.txtTotal.TabIndex = 17;
             this.txtTotal.TabStop = false;
             this.txtTotal.Text = "00,00";
@@ -92,12 +96,12 @@ namespace Sistema_Elitt
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(665, 407);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(616, 407);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(73, 16);
+            this.lblTotal.Size = new System.Drawing.Size(56, 20);
             this.lblTotal.TabIndex = 18;
-            this.lblTotal.Text = "Total (R$): ";
+            this.lblTotal.Text = "Total : ";
             // 
             // gpbItens
             // 
@@ -146,7 +150,7 @@ namespace Sistema_Elitt
             this.lblCodProduto.AutoSize = true;
             this.lblCodProduto.Location = new System.Drawing.Point(19, 44);
             this.lblCodProduto.Name = "lblCodProduto";
-            this.lblCodProduto.Size = new System.Drawing.Size(52, 16);
+            this.lblCodProduto.Size = new System.Drawing.Size(51, 16);
             this.lblCodProduto.TabIndex = 14;
             this.lblCodProduto.Text = "Código";
             // 
@@ -155,7 +159,7 @@ namespace Sistema_Elitt
             this.lblValorU.AutoSize = true;
             this.lblValorU.Location = new System.Drawing.Point(19, 213);
             this.lblValorU.Name = "lblValorU";
-            this.lblValorU.Size = new System.Drawing.Size(86, 16);
+            this.lblValorU.Size = new System.Drawing.Size(85, 16);
             this.lblValorU.TabIndex = 12;
             this.lblValorU.Text = "Valor unitário";
             // 
@@ -184,7 +188,7 @@ namespace Sistema_Elitt
             this.lblDescr.AutoSize = true;
             this.lblDescr.Location = new System.Drawing.Point(19, 102);
             this.lblDescr.Name = "lblDescr";
-            this.lblDescr.Size = new System.Drawing.Size(70, 16);
+            this.lblDescr.Size = new System.Drawing.Size(69, 16);
             this.lblDescr.TabIndex = 4;
             this.lblDescr.Text = "Descrição";
             // 
@@ -224,7 +228,7 @@ namespace Sistema_Elitt
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Location = new System.Drawing.Point(18, 156);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(78, 16);
+            this.lblQuantidade.Size = new System.Drawing.Size(77, 16);
             this.lblQuantidade.TabIndex = 5;
             this.lblQuantidade.Text = "Quantidade";
             // 
@@ -247,26 +251,73 @@ namespace Sistema_Elitt
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(840, 402);
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(792, 402);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(108, 27);
+            this.btnFinalizar.Size = new System.Drawing.Size(140, 42);
             this.btnFinalizar.TabIndex = 14;
             this.btnFinalizar.Text = "Finalizar venda";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // txtRecebido
+            // 
+            this.txtRecebido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecebido.Location = new System.Drawing.Point(678, 439);
+            this.txtRecebido.Name = "txtRecebido";
+            this.txtRecebido.Size = new System.Drawing.Size(90, 26);
+            this.txtRecebido.TabIndex = 19;
+            this.txtRecebido.TabStop = false;
+            this.txtRecebido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecebido_KeyPress);
+            this.txtRecebido.Leave += new System.EventHandler(this.txtRecebido_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(520, 442);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Dinheiro Recebido : ";
+            // 
+            // txtTroco
+            // 
+            this.txtTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTroco.Location = new System.Drawing.Point(678, 473);
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.ReadOnly = true;
+            this.txtTroco.Size = new System.Drawing.Size(90, 26);
+            this.txtTroco.TabIndex = 21;
+            this.txtTroco.TabStop = false;
+            this.txtTroco.Text = "00,00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(611, 473);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 20);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Troco : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 490);
+            this.ClientSize = new System.Drawing.Size(997, 534);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTroco);
+            this.Controls.Add(this.txtRecebido);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.gpbItens);
             this.Controls.Add(this.dgvVenda);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.menuStrip1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -300,6 +351,10 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.DataGridView dgvVenda;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.TextBox txtRecebido;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTroco;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -106,7 +106,16 @@ namespace Sistema_Elitt
         }
         //Limpar campos
 
-
+        //Aceitar só numeros
+        private void OnlyNumbers(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+        //Aceitar só numeros
 
         private void dgvVenda_DoubleClick(object sender, EventArgs e)
         {
@@ -179,7 +188,7 @@ namespace Sistema_Elitt
                         dgvVenda.Rows[linha].Cells[0].Value = txtCodProduto.Text;
                         dgvVenda.Rows[linha].Cells[1].Value = txtDescr.Text;
                         dgvVenda.Rows[linha].Cells[2].Value = txtValorU.Text;
-                        if (txtQuant.Text.Length<=0)
+                        if (txtQuant.Text.Length <= 0)
                         {
                             dgvVenda.Rows[linha].Cells[3].Value = 1;
                             quantItem = 1;
@@ -215,36 +224,46 @@ namespace Sistema_Elitt
             int i, qtdeAntigo;
             try
             {
-                objV = new Venda();
-                objV.setDataV(DateTime.Now);
-                objV.setTotal(txtTotal.Text);
-                daoV = new VendaDAO();
-                daoV.gravarGetCodigo(objV);
-
-                daoI = new ItemDAO();
-                daoP = new ProdutoDAO();
-
-                for (i = 0; i < dgvVenda.Rows.Count; i++)
+                if (dgvVenda.Rows.Count <= 0)
                 {
-                    objI = new Item();
-                    objP = new Produto();
-                    objI.setCodV(objV.cod);
-                    objI.setCodProd(dgvVenda.Rows[i].Cells[0].Value.ToString());
-                    objI.setDescr(dgvVenda.Rows[i].Cells[1].Value.ToString());
-                    objI.setValor(dgvVenda.Rows[i].Cells[2].Value.ToString());
-                    objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
-                    daoI.gravar(objI);
-
-                    objP.setCod(objI.codProd);
-                    qtdeAntigo = daoP.buscarQtde(objP.cod);
-                    objP.setQtde(qtdeAntigo - objI.qtde);
-                    
-                    daoP.alterarQtde(objP);
+                    MessageBox.Show("Nenhum produto no carrinho!");
                 }
-                this.dgvVenda.Rows.Clear();
-                LimparCampos();
-                GimmeTotal();
-                MessageBox.Show("Venda finalizada com sucesso!");
+                else
+                {
+                    objV = new Venda();
+                    objV.setDataV(DateTime.Now);
+                    objV.setTotal(txtTotal.Text);
+                    daoV = new VendaDAO();
+                    daoV.gravarGetCodigo(objV);
+
+                    daoI = new ItemDAO();
+                    daoP = new ProdutoDAO();
+
+                    for (i = 0; i < dgvVenda.Rows.Count; i++)
+                    {
+                        objI = new Item();
+                        objP = new Produto();
+                        objI.setCodV(objV.cod);
+                        objI.setCodProd(dgvVenda.Rows[i].Cells[0].Value.ToString());
+                        objI.setDescr(dgvVenda.Rows[i].Cells[1].Value.ToString());
+                        objI.setValor(dgvVenda.Rows[i].Cells[2].Value.ToString());
+                        objI.setQtde(dgvVenda.Rows[i].Cells[3].Value.ToString());
+                        daoI.gravar(objI);
+
+                        objP.setCod(objI.codProd);
+                        qtdeAntigo = daoP.buscarQtde(objP.cod);
+                        objP.setQtde(qtdeAntigo - objI.qtde);
+
+                        daoP.alterarQtde(objP);
+                    }
+                    this.dgvVenda.Rows.Clear();
+                    LimparCampos();
+                    txtTroco.Text = "00,00";
+                    txtRecebido.Text = "";
+                    GimmeTotal();
+                    MessageBox.Show("Venda finalizada com sucesso!");
+                }
+
             }
             catch (Exception ex)
             {
@@ -272,6 +291,29 @@ namespace Sistema_Elitt
                     txtQuant.Text = qtde.ToString();
                 }
             }
+        }
+
+        private void txtRecebido_Leave(object sender, EventArgs e)
+        {
+            double total, recebido;
+            if(txtRecebido.Text.Length <= 0)
+            {
+                recebido = 0;
+            }
+            else
+            {
+                recebido = Convert.ToDouble(txtRecebido.Text);
+            }
+            total = Convert.ToDouble(txtTotal.Text);
+            if (total < recebido)
+                txtTroco.Text = (recebido - total).ToString();
+            else
+                txtTroco.Text = "00,00";
+        }
+
+        private void txtRecebido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            OnlyNumbers(e);
         }
     }
 }

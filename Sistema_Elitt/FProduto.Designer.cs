@@ -86,7 +86,7 @@ namespace Sistema_Elitt
             this.txtPreco.Location = new System.Drawing.Point(75, 54);
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(98, 20);
-            this.txtPreco.TabIndex = 8;
+            this.txtPreco.TabIndex = 1;
             this.txtPreco.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPreco_KeyUp);
             // 
             // nudQtde
@@ -99,14 +99,14 @@ namespace Sistema_Elitt
             0});
             this.nudQtde.Name = "nudQtde";
             this.nudQtde.Size = new System.Drawing.Size(95, 20);
-            this.nudQtde.TabIndex = 7;
+            this.nudQtde.TabIndex = 2;
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(186, 57);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(68, 42);
-            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "Adicionar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
