@@ -17,7 +17,8 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into Venda(total, datav) values(@t, @dv)";
+                whisper.comando.CommandText = "Insert into Venda(tipo, total, datav) values(@tipo, @t, @dv)";
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = obj.tipo;
                 whisper.comando.Parameters.Add("@t", NpgsqlDbType.Double).Value = obj.total;
                 whisper.comando.Parameters.Add("@dv", NpgsqlDbType.Timestamp).Value = obj.dataV;
                 whisper.comando.Prepare();
@@ -37,7 +38,8 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into Venda(total, datav) values(@t, @dv) returning cod";
+                whisper.comando.CommandText = "Insert into Venda(tipo, total, datav) values(@tipo, @t, @dv) returning cod";
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = obj.tipo;
                 whisper.comando.Parameters.Add("@t", NpgsqlDbType.Double).Value = obj.total;
                 whisper.comando.Parameters.Add("@dv", NpgsqlDbType.Timestamp).Value = obj.dataV;
                 whisper.comando.Prepare();
@@ -58,14 +60,39 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Select cod, total, datav from venda order by datav " + direcao;
+                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda order by datav " + direcao;
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();
                 whisper.tabela.Load(whisper.dreader);
                 Banco.conexao.Close();
                 whisper.tabela.Columns[0].ColumnName = "Código";
-                whisper.tabela.Columns[1].ColumnName = "Total";
-                whisper.tabela.Columns[2].ColumnName = "Data da venda";
+                whisper.tabela.Columns[1].ColumnName = "Tipo";
+                whisper.tabela.Columns[2].ColumnName = "Total";
+                whisper.tabela.Columns[3].ColumnName = "Data da venda";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar venda: " + ex.Message);
+            }
+        }
+        public DataTable listarVendaTipo(string direcao, string tipo)
+        {
+            Banco whisper = null;
+
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda where tipo=@tipo order by datav " + direcao;
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = tipo;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Código";
+                whisper.tabela.Columns[1].ColumnName = "Tipo";
+                whisper.tabela.Columns[2].ColumnName = "Total";
+                whisper.tabela.Columns[3].ColumnName = "Data da venda";
                 return (whisper.tabela);
             }
             catch (Exception ex)
@@ -81,7 +108,8 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Update venda set total=@t, datav=@dv where cod=@cod";
+                whisper.comando.CommandText = "Update venda set tipo=@tipo, total=@t, datav=@dv where cod=@cod";
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = obj.tipo;
                 whisper.comando.Parameters.Add("@t", NpgsqlDbType.Varchar).Value = obj.total;
                 whisper.comando.Parameters.Add("@dv", NpgsqlDbType.Double).Value = obj.dataV;
                 whisper.comando.Parameters.Add("@cod", NpgsqlDbType.Integer).Value = obj.cod;

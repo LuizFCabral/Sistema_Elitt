@@ -52,6 +52,8 @@ namespace Sistema_Elitt
             this.label1 = new System.Windows.Forms.Label();
             this.txtTroco = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.rdbCartao = new System.Windows.Forms.RadioButton();
+            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -302,11 +304,37 @@ namespace Sistema_Elitt
             this.label2.TabIndex = 22;
             this.label2.Text = "Troco : ";
             // 
+            // rdbCartao
+            // 
+            this.rdbCartao.AutoSize = true;
+            this.rdbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbCartao.Location = new System.Drawing.Point(329, 411);
+            this.rdbCartao.Name = "rdbCartao";
+            this.rdbCartao.Size = new System.Drawing.Size(75, 24);
+            this.rdbCartao.TabIndex = 23;
+            this.rdbCartao.TabStop = true;
+            this.rdbCartao.Text = "Cartão";
+            this.rdbCartao.UseVisualStyleBackColor = true;
+            // 
+            // rdbDinheiro
+            // 
+            this.rdbDinheiro.AutoSize = true;
+            this.rdbDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbDinheiro.Location = new System.Drawing.Point(410, 411);
+            this.rdbDinheiro.Name = "rdbDinheiro";
+            this.rdbDinheiro.Size = new System.Drawing.Size(86, 24);
+            this.rdbDinheiro.TabIndex = 24;
+            this.rdbDinheiro.TabStop = true;
+            this.rdbDinheiro.Text = "Dinheiro";
+            this.rdbDinheiro.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 534);
+            this.Controls.Add(this.rdbDinheiro);
+            this.Controls.Add(this.rdbCartao);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.txtRecebido);
@@ -355,6 +383,8 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTroco;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton rdbCartao;
+        private System.Windows.Forms.RadioButton rdbDinheiro;
     }
 }
 

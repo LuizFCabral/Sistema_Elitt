@@ -129,6 +129,7 @@
     <Compile Include="FQtde.Designer.cs">
       <DependentUpon>FQtde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemDAO.cs" />
     <Compile Include="Produto.cs" />

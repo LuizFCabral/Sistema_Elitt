@@ -15,6 +15,7 @@ namespace Sistema_Elitt
 );*/
 
         public int cod { get; private set; }
+        public string tipo { get; private set; }
         public double total { get; private set; }
         public DateTime dataV { get; private set; }
 
@@ -33,6 +34,10 @@ namespace Sistema_Elitt
 
                 throw new Exception("Erro no setCod: " + ex.Message);
             }
+        }
+        public void setTipo(string t)
+        {
+            this.tipo = t;
         }
         public void setTotal(double t)
         {

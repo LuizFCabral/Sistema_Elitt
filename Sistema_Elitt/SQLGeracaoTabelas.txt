@@ -7,6 +7,7 @@ create table produto (
 
 create table venda(
 	cod serial primary key,
+	tipo varchar(20),
 	total float,
 	datav timestamp
 );

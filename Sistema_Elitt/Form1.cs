@@ -231,6 +231,12 @@ namespace Sistema_Elitt
                 else
                 {
                     objV = new Venda();
+                    string tipo;
+                    if (rdbCartao.Checked)
+                        tipo = "cartao";
+                    else
+                        tipo = "dinheiro";
+                    objV.setTipo(tipo);
                     objV.setDataV(DateTime.Now);
                     objV.setTotal(txtTotal.Text);
                     daoV = new VendaDAO();
