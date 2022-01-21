@@ -62,7 +62,7 @@ namespace Sistema_Elitt
             this.dgvVendas.ReadOnly = true;
             this.dgvVendas.RowHeadersVisible = false;
             this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendas.Size = new System.Drawing.Size(366, 376);
+            this.dgvVendas.Size = new System.Drawing.Size(415, 376);
             this.dgvVendas.TabIndex = 16;
             this.dgvVendas.TabStop = false;
             this.dgvVendas.DoubleClick += new System.EventHandler(this.dgvVendas_DoubleClick);
@@ -92,7 +92,7 @@ namespace Sistema_Elitt
             this.gpbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbVendas.Location = new System.Drawing.Point(12, 75);
             this.gpbVendas.Name = "gpbVendas";
-            this.gpbVendas.Size = new System.Drawing.Size(378, 448);
+            this.gpbVendas.Size = new System.Drawing.Size(427, 448);
             this.gpbVendas.TabIndex = 18;
             this.gpbVendas.TabStop = false;
             this.gpbVendas.Text = "Vendas Cartão";
@@ -135,7 +135,7 @@ namespace Sistema_Elitt
             this.gpbItensVenda.Controls.Add(this.lblTotalVenda);
             this.gpbItensVenda.Controls.Add(this.dgvProdutosVenda);
             this.gpbItensVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbItensVenda.Location = new System.Drawing.Point(810, 75);
+            this.gpbItensVenda.Location = new System.Drawing.Point(890, 75);
             this.gpbItensVenda.Name = "gpbItensVenda";
             this.gpbItensVenda.Size = new System.Drawing.Size(421, 448);
             this.gpbItensVenda.TabIndex = 19;
@@ -159,9 +159,9 @@ namespace Sistema_Elitt
             this.gpbVendasD.Controls.Add(this.rdbMrd);
             this.gpbVendasD.Controls.Add(this.dgvVendasD);
             this.gpbVendasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendasD.Location = new System.Drawing.Point(410, 75);
+            this.gpbVendasD.Location = new System.Drawing.Point(445, 75);
             this.gpbVendasD.Name = "gpbVendasD";
-            this.gpbVendasD.Size = new System.Drawing.Size(378, 448);
+            this.gpbVendasD.Size = new System.Drawing.Size(427, 448);
             this.gpbVendasD.TabIndex = 20;
             this.gpbVendasD.TabStop = false;
             this.gpbVendasD.Text = "Vendas Dinheiro";
@@ -211,7 +211,7 @@ namespace Sistema_Elitt
             this.dgvVendasD.ReadOnly = true;
             this.dgvVendasD.RowHeadersVisible = false;
             this.dgvVendasD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendasD.Size = new System.Drawing.Size(366, 376);
+            this.dgvVendasD.Size = new System.Drawing.Size(415, 376);
             this.dgvVendasD.TabIndex = 16;
             this.dgvVendasD.TabStop = false;
             this.dgvVendasD.DoubleClick += new System.EventHandler(this.dgvVendasD_DoubleClick);
@@ -220,7 +220,7 @@ namespace Sistema_Elitt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 582);
+            this.ClientSize = new System.Drawing.Size(1323, 582);
             this.Controls.Add(this.gpbVendasD);
             this.Controls.Add(this.gpbItensVenda);
             this.Controls.Add(this.gpbVendas);

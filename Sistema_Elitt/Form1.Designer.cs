@@ -310,6 +310,7 @@ namespace Sistema_Elitt
             // rdbCartao
             // 
             this.rdbCartao.AutoSize = true;
+            this.rdbCartao.Checked = true;
             this.rdbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbCartao.Location = new System.Drawing.Point(614, 453);
             this.rdbCartao.Name = "rdbCartao";

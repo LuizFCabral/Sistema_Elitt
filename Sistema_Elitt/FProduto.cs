@@ -93,7 +93,7 @@ namespace Sistema_Elitt
             try
             {
                 descr = txtDescr.Text.Trim();
-                p = String.Format("{0:0.00}", txtPreco.Text.Replace(",", ".").Trim());
+                p = String.Format("{0:0.00}", txtPreco.Text.Replace(".", ",").Trim());
                 q = nudQtde.Value.ToString();
                 if(descr.Length == 0 || p.Length == 0 || q.Length == 0)
                 {
@@ -208,7 +208,7 @@ namespace Sistema_Elitt
             try
             {
                 descr = txtDescrSelect.Text.Trim();
-                p = String.Format("{0:0.00}", txtPrecoSelect.Text.Replace(",",".").Trim());
+                p = String.Format("{0:0.00}", txtPrecoSelect.Text.Replace(".",",").Trim());
                 q = nudQtdeSelect.Value.ToString();
                 if (descr.Length == 0 || p.Length == 0 || q.Length == 0)
                 {
@@ -255,6 +255,7 @@ namespace Sistema_Elitt
                         atualizarLista(pesquisaAtual);
                         mostrarSelecao(obj);
                         MessageBox.Show("Produto de código " + obj.cod + " foi atualizado com sucesso.");
+                        gpbSelect.Hide();
                     }
                 }
             }
@@ -275,6 +276,7 @@ namespace Sistema_Elitt
                 atualizarLista(pesquisaAtual);
                 txtCod.Clear();
                 MessageBox.Show("Produto de código " + codAtual + " foi removido com sucesso.");
+                gpbSelect.Hide();
             }
             catch (Exception ex)
             {
