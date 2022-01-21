@@ -326,5 +326,13 @@ namespace Sistema_Elitt
             Functions functions = new Functions();
             functions.OnlyNumbers(e);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
+        }
     }
 }

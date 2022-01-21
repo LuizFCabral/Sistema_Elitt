@@ -226,6 +226,7 @@ namespace Sistema_Elitt
             this.Controls.Add(this.gpbVendas);
             this.Name = "FConsultas";
             this.Text = "Conulta";
+            this.Load += new System.EventHandler(this.FConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             this.gpbVendas.ResumeLayout(false);
