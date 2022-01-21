@@ -61,33 +61,34 @@ namespace Sistema_Elitt
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnProd,
             this.btnConsulta});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(997, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1282, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // btnProd
             // 
             this.btnProd.Name = "btnProd";
-            this.btnProd.Size = new System.Drawing.Size(67, 20);
+            this.btnProd.Size = new System.Drawing.Size(85, 25);
             this.btnProd.Text = "Produtos";
             this.btnProd.Click += new System.EventHandler(this.btnProd_Click);
             // 
             // btnConsulta
             // 
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(71, 20);
+            this.btnConsulta.Size = new System.Drawing.Size(90, 25);
             this.btnConsulta.Text = "Consultas";
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(678, 404);
+            this.txtTotal.Location = new System.Drawing.Point(963, 446);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(90, 26);
@@ -99,7 +100,7 @@ namespace Sistema_Elitt
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(616, 407);
+            this.lblTotal.Location = new System.Drawing.Point(901, 449);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(56, 20);
             this.lblTotal.TabIndex = 18;
@@ -118,20 +119,20 @@ namespace Sistema_Elitt
             this.gpbItens.Controls.Add(this.btnIncluir);
             this.gpbItens.Controls.Add(this.btnBrowse);
             this.gpbItens.Controls.Add(this.lblQuantidade);
-            this.gpbItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbItens.Location = new System.Drawing.Point(12, 40);
+            this.gpbItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbItens.Location = new System.Drawing.Point(72, 114);
             this.gpbItens.Name = "gpbItens";
-            this.gpbItens.Size = new System.Drawing.Size(298, 351);
+            this.gpbItens.Size = new System.Drawing.Size(424, 372);
             this.gpbItens.TabIndex = 16;
             this.gpbItens.TabStop = false;
             this.gpbItens.Text = "Adicionar itens:";
             // 
             // btnRemover
             // 
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(130, 297);
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Location = new System.Drawing.Point(191, 318);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(68, 33);
+            this.btnRemover.Size = new System.Drawing.Size(102, 33);
             this.btnRemover.TabIndex = 15;
             this.btnRemover.TabStop = false;
             this.btnRemover.Text = "Remover";
@@ -143,8 +144,9 @@ namespace Sistema_Elitt
             // 
             this.txtCodProduto.Location = new System.Drawing.Point(22, 67);
             this.txtCodProduto.Name = "txtCodProduto";
-            this.txtCodProduto.Size = new System.Drawing.Size(100, 22);
+            this.txtCodProduto.Size = new System.Drawing.Size(100, 26);
             this.txtCodProduto.TabIndex = 1;
+            this.txtCodProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_KeyPress);
             this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
             // 
             // lblCodProduto
@@ -152,7 +154,7 @@ namespace Sistema_Elitt
             this.lblCodProduto.AutoSize = true;
             this.lblCodProduto.Location = new System.Drawing.Point(19, 44);
             this.lblCodProduto.Name = "lblCodProduto";
-            this.lblCodProduto.Size = new System.Drawing.Size(51, 16);
+            this.lblCodProduto.Size = new System.Drawing.Size(59, 20);
             this.lblCodProduto.TabIndex = 14;
             this.lblCodProduto.Text = "Código";
             // 
@@ -161,17 +163,17 @@ namespace Sistema_Elitt
             this.lblValorU.AutoSize = true;
             this.lblValorU.Location = new System.Drawing.Point(19, 213);
             this.lblValorU.Name = "lblValorU";
-            this.lblValorU.Size = new System.Drawing.Size(85, 16);
+            this.lblValorU.Size = new System.Drawing.Size(102, 20);
             this.lblValorU.TabIndex = 12;
             this.lblValorU.Text = "Valor unitário";
             // 
             // txtValorU
             // 
             this.txtValorU.Enabled = false;
-            this.txtValorU.Location = new System.Drawing.Point(22, 232);
+            this.txtValorU.Location = new System.Drawing.Point(22, 236);
             this.txtValorU.Name = "txtValorU";
             this.txtValorU.ReadOnly = true;
-            this.txtValorU.Size = new System.Drawing.Size(170, 22);
+            this.txtValorU.Size = new System.Drawing.Size(170, 26);
             this.txtValorU.TabIndex = 4;
             this.txtValorU.TabStop = false;
             // 
@@ -181,7 +183,7 @@ namespace Sistema_Elitt
             this.txtDescr.Location = new System.Drawing.Point(22, 121);
             this.txtDescr.Name = "txtDescr";
             this.txtDescr.ReadOnly = true;
-            this.txtDescr.Size = new System.Drawing.Size(170, 22);
+            this.txtDescr.Size = new System.Drawing.Size(170, 26);
             this.txtDescr.TabIndex = 2;
             this.txtDescr.TabStop = false;
             // 
@@ -190,7 +192,7 @@ namespace Sistema_Elitt
             this.lblDescr.AutoSize = true;
             this.lblDescr.Location = new System.Drawing.Point(19, 102);
             this.lblDescr.Name = "lblDescr";
-            this.lblDescr.Size = new System.Drawing.Size(69, 16);
+            this.lblDescr.Size = new System.Drawing.Size(80, 20);
             this.lblDescr.TabIndex = 4;
             this.lblDescr.Text = "Descrição";
             // 
@@ -198,16 +200,17 @@ namespace Sistema_Elitt
             // 
             this.txtQuant.Location = new System.Drawing.Point(22, 175);
             this.txtQuant.Name = "txtQuant";
-            this.txtQuant.Size = new System.Drawing.Size(170, 22);
+            this.txtQuant.Size = new System.Drawing.Size(170, 26);
             this.txtQuant.TabIndex = 3;
+            this.txtQuant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuant_KeyPress);
             this.txtQuant.Leave += new System.EventHandler(this.txtQuant_Leave);
             // 
             // btnIncluir
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncluir.Location = new System.Drawing.Point(204, 297);
+            this.btnIncluir.Location = new System.Drawing.Point(309, 318);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(68, 33);
+            this.btnIncluir.Size = new System.Drawing.Size(83, 33);
             this.btnIncluir.TabIndex = 6;
             this.btnIncluir.Text = "+";
             this.btnIncluir.UseVisualStyleBackColor = true;
@@ -215,10 +218,10 @@ namespace Sistema_Elitt
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(204, 62);
+            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.Location = new System.Drawing.Point(279, 65);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(78, 33);
+            this.btnBrowse.Size = new System.Drawing.Size(113, 36);
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.TabStop = false;
             this.btnBrowse.Text = "Ver produtos";
@@ -230,7 +233,7 @@ namespace Sistema_Elitt
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Location = new System.Drawing.Point(18, 156);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(77, 16);
+            this.lblQuantidade.Size = new System.Drawing.Size(92, 20);
             this.lblQuantidade.TabIndex = 5;
             this.lblQuantidade.Text = "Quantidade";
             // 
@@ -241,7 +244,7 @@ namespace Sistema_Elitt
             this.dgvVenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVenda.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenda.Location = new System.Drawing.Point(328, 40);
+            this.dgvVenda.Location = new System.Drawing.Point(597, 73);
             this.dgvVenda.Name = "dgvVenda";
             this.dgvVenda.ReadOnly = true;
             this.dgvVenda.RowHeadersVisible = false;
@@ -254,7 +257,7 @@ namespace Sistema_Elitt
             // btnFinalizar
             // 
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(792, 402);
+            this.btnFinalizar.Location = new System.Drawing.Point(1077, 444);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(140, 42);
             this.btnFinalizar.TabIndex = 14;
@@ -265,7 +268,7 @@ namespace Sistema_Elitt
             // txtRecebido
             // 
             this.txtRecebido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecebido.Location = new System.Drawing.Point(678, 439);
+            this.txtRecebido.Location = new System.Drawing.Point(963, 481);
             this.txtRecebido.Name = "txtRecebido";
             this.txtRecebido.Size = new System.Drawing.Size(90, 26);
             this.txtRecebido.TabIndex = 19;
@@ -277,7 +280,7 @@ namespace Sistema_Elitt
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(520, 442);
+            this.label1.Location = new System.Drawing.Point(805, 484);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 20;
@@ -286,7 +289,7 @@ namespace Sistema_Elitt
             // txtTroco
             // 
             this.txtTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTroco.Location = new System.Drawing.Point(678, 473);
+            this.txtTroco.Location = new System.Drawing.Point(963, 515);
             this.txtTroco.Name = "txtTroco";
             this.txtTroco.ReadOnly = true;
             this.txtTroco.Size = new System.Drawing.Size(90, 26);
@@ -298,7 +301,7 @@ namespace Sistema_Elitt
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(611, 473);
+            this.label2.Location = new System.Drawing.Point(896, 515);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 22;
@@ -308,7 +311,7 @@ namespace Sistema_Elitt
             // 
             this.rdbCartao.AutoSize = true;
             this.rdbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCartao.Location = new System.Drawing.Point(329, 411);
+            this.rdbCartao.Location = new System.Drawing.Point(614, 453);
             this.rdbCartao.Name = "rdbCartao";
             this.rdbCartao.Size = new System.Drawing.Size(75, 24);
             this.rdbCartao.TabIndex = 23;
@@ -320,7 +323,7 @@ namespace Sistema_Elitt
             // 
             this.rdbDinheiro.AutoSize = true;
             this.rdbDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbDinheiro.Location = new System.Drawing.Point(410, 411);
+            this.rdbDinheiro.Location = new System.Drawing.Point(695, 453);
             this.rdbDinheiro.Name = "rdbDinheiro";
             this.rdbDinheiro.Size = new System.Drawing.Size(86, 24);
             this.rdbDinheiro.TabIndex = 24;
@@ -332,7 +335,7 @@ namespace Sistema_Elitt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 534);
+            this.ClientSize = new System.Drawing.Size(1282, 579);
             this.Controls.Add(this.rdbDinheiro);
             this.Controls.Add(this.rdbCartao);
             this.Controls.Add(this.label2);
@@ -345,7 +348,6 @@ namespace Sistema_Elitt
             this.Controls.Add(this.dgvVenda);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.menuStrip1);
-            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);

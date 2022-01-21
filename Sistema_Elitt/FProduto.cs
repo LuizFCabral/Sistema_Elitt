@@ -78,7 +78,7 @@ namespace Sistema_Elitt
                 txtCod.Text = select.cod.ToString();
                 gpbSelect.Text = "Dados do produto - " + select.descr + ", Código: " + select.cod;
                 txtDescrSelect.Text = select.descr;
-                txtPrecoSelect.Text = select.preco.ToString();
+                txtPrecoSelect.Text = String.Format("{0:0.00}", select.preco);
                 nudQtdeSelect.Value = select.qtde;
                 gpbSelect.Show();
             }
@@ -93,7 +93,7 @@ namespace Sistema_Elitt
             try
             {
                 descr = txtDescr.Text.Trim();
-                p = txtPreco.Text.Trim();
+                p = String.Format("{0:0.00}", txtPreco.Text.Replace(",", ".").Trim());
                 q = nudQtde.Value.ToString();
                 if(descr.Length == 0 || p.Length == 0 || q.Length == 0)
                 {
@@ -208,7 +208,7 @@ namespace Sistema_Elitt
             try
             {
                 descr = txtDescrSelect.Text.Trim();
-                p = txtPrecoSelect.Text.Trim();
+                p = String.Format("{0:0.00}", txtPrecoSelect.Text.Replace(",",".").Trim());
                 q = nudQtdeSelect.Value.ToString();
                 if (descr.Length == 0 || p.Length == 0 || q.Length == 0)
                 {
@@ -327,6 +327,24 @@ namespace Sistema_Elitt
             {
                 MessageBox.Show("Erro ao acessar relatórios do produto " + pAtual.descr + " : " + ex.Message);
             }
+        }
+
+        private void txtPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
+        }
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
+        }
+
+        private void txtPrecoSelect_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
         }
     }
 }

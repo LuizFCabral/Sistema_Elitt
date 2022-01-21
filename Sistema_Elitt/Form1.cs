@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Sistema_Elitt.Functions;
 
 namespace Sistema_Elitt
 {
@@ -77,7 +78,7 @@ namespace Sistema_Elitt
                     if (obj != null)
                     {
                         txtDescr.Text = obj.descr;
-                        txtValorU.Text = obj.preco.ToString();
+                        txtValorU.Text = String.Format("{0:0.00}", obj.preco.ToString());
                         qtde = dao.buscarQtde(cod);
                     }
                     else
@@ -106,16 +107,6 @@ namespace Sistema_Elitt
         }
         //Limpar campos
 
-        //Aceitar só numeros
-        private void OnlyNumbers(KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-            (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
-        //Aceitar só numeros
 
         private void dgvVenda_DoubleClick(object sender, EventArgs e)
         {
@@ -124,7 +115,7 @@ namespace Sistema_Elitt
                 linha = dgvVenda.SelectedCells[0].RowIndex;
                 txtCodProduto.Text = dgvVenda.Rows[linha].Cells[0].Value.ToString();
                 txtDescr.Text = dgvVenda.Rows[linha].Cells[1].Value.ToString();
-                txtValorU.Text = dgvVenda.Rows[linha].Cells[2].Value.ToString();
+                txtValorU.Text = String.Format("{0:0.00}", dgvVenda.Rows[linha].Cells[2].Value);
                 txtQuant.Text = dgvVenda.Rows[linha].Cells[3].Value.ToString();
                 btnRemover.Show();
             }
@@ -176,7 +167,7 @@ namespace Sistema_Elitt
                             achou = true;
                             valor = quant * Convert.ToDouble(dgvVenda.Rows[i].Cells[2].Value);
                             dgvVenda.Rows[i].Cells[3].Value = quant;
-                            dgvVenda.Rows[i].Cells[4].Value = valor.ToString();
+                            dgvVenda.Rows[i].Cells[4].Value = String.Format("{0:0.00}", valor);
                             break;
                         }
                     }
@@ -187,7 +178,7 @@ namespace Sistema_Elitt
                         linha = dgvVenda.Rows.Count - 1;
                         dgvVenda.Rows[linha].Cells[0].Value = txtCodProduto.Text;
                         dgvVenda.Rows[linha].Cells[1].Value = txtDescr.Text;
-                        dgvVenda.Rows[linha].Cells[2].Value = txtValorU.Text;
+                        dgvVenda.Rows[linha].Cells[2].Value =  txtValorU.Text;
                         if (txtQuant.Text.Length <= 0)
                         {
                             dgvVenda.Rows[linha].Cells[3].Value = 1;
@@ -199,7 +190,8 @@ namespace Sistema_Elitt
                             quantItem = Convert.ToInt32(txtQuant.Text);
                         }
                         double valorU = Convert.ToDouble(txtValorU.Text);
-                        dgvVenda.Rows[linha].Cells[4].Value = quantItem * valorU;
+                        double total = quantItem * valorU;
+                        dgvVenda.Rows[linha].Cells[4].Value = String.Format("{0:0.00}", total);
                     }
                     GimmeTotal();
                 }
@@ -319,7 +311,20 @@ namespace Sistema_Elitt
 
         private void txtRecebido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            OnlyNumbers(e);
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
+        }
+
+        private void txtQuant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
+        }
+
+        private void txtCodProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Functions functions = new Functions();
+            functions.OnlyNumbers(e);
         }
     }
 }

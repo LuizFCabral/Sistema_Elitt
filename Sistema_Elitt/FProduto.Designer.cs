@@ -87,6 +87,7 @@ namespace Sistema_Elitt
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(98, 20);
             this.txtPreco.TabIndex = 1;
+            this.txtPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPreco_KeyPress);
             this.txtPreco.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPreco_KeyUp);
             // 
             // nudQtde
@@ -196,6 +197,7 @@ namespace Sistema_Elitt
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(113, 20);
             this.txtCod.TabIndex = 8;
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // lblCod
             // 
@@ -281,6 +283,7 @@ namespace Sistema_Elitt
             this.txtPrecoSelect.Name = "txtPrecoSelect";
             this.txtPrecoSelect.Size = new System.Drawing.Size(98, 20);
             this.txtPrecoSelect.TabIndex = 9;
+            this.txtPrecoSelect.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoSelect_KeyPress);
             // 
             // btnRelatorio
             // 
