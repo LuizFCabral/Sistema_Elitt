@@ -77,6 +77,30 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao listar venda: " + ex.Message);
             }
         }
+        public DataTable listarVendaTipoData(string direcao, string tipo, string filtro)
+        {
+            Banco whisper = null;
+
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda where tipo=@tipo and extract("+filtro+ " from datav) = extract(" + filtro + " from current_date) order by datav " + direcao;
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = tipo;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Código";
+                whisper.tabela.Columns[1].ColumnName = "Tipo";
+                whisper.tabela.Columns[2].ColumnName = "Total";
+                whisper.tabela.Columns[3].ColumnName = "Data da venda";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar venda: " + ex.Message);
+            }
+        }
 
         public int alterar(Venda obj)
         {
