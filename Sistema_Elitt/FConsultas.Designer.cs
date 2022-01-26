@@ -32,15 +32,9 @@ namespace Sistema_Elitt
             this.dgvVendas = new System.Windows.Forms.DataGridView();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.gpbVendas = new System.Windows.Forms.GroupBox();
-            this.lblOrdenar = new System.Windows.Forms.Label();
-            this.rdbAsc = new System.Windows.Forms.RadioButton();
-            this.rdbDesc = new System.Windows.Forms.RadioButton();
             this.gpbItensVenda = new System.Windows.Forms.GroupBox();
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.gpbVendasD = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rdbMad = new System.Windows.Forms.RadioButton();
-            this.rdbMrd = new System.Windows.Forms.RadioButton();
             this.dgvVendasD = new System.Windows.Forms.DataGridView();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +47,8 @@ namespace Sistema_Elitt
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbCredDeb = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.gpbVendas.SuspendLayout();
@@ -96,9 +92,8 @@ namespace Sistema_Elitt
             // 
             // gpbVendas
             // 
-            this.gpbVendas.Controls.Add(this.lblOrdenar);
-            this.gpbVendas.Controls.Add(this.rdbAsc);
-            this.gpbVendas.Controls.Add(this.rdbDesc);
+            this.gpbVendas.Controls.Add(this.label1);
+            this.gpbVendas.Controls.Add(this.cmbCredDeb);
             this.gpbVendas.Controls.Add(this.dgvVendas);
             this.gpbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbVendas.Location = new System.Drawing.Point(12, 101);
@@ -107,39 +102,6 @@ namespace Sistema_Elitt
             this.gpbVendas.TabIndex = 18;
             this.gpbVendas.TabStop = false;
             this.gpbVendas.Text = "Cartão";
-            // 
-            // lblOrdenar
-            // 
-            this.lblOrdenar.AutoSize = true;
-            this.lblOrdenar.Location = new System.Drawing.Point(6, 31);
-            this.lblOrdenar.Name = "lblOrdenar";
-            this.lblOrdenar.Size = new System.Drawing.Size(71, 16);
-            this.lblOrdenar.TabIndex = 19;
-            this.lblOrdenar.Text = "Iniciar dos:";
-            // 
-            // rdbAsc
-            // 
-            this.rdbAsc.AutoSize = true;
-            this.rdbAsc.Location = new System.Drawing.Point(190, 29);
-            this.rdbAsc.Name = "rdbAsc";
-            this.rdbAsc.Size = new System.Drawing.Size(101, 20);
-            this.rdbAsc.TabIndex = 18;
-            this.rdbAsc.TabStop = true;
-            this.rdbAsc.Text = "Mais antigos";
-            this.rdbAsc.UseVisualStyleBackColor = true;
-            this.rdbAsc.Click += new System.EventHandler(this.rdbAsc_Click);
-            // 
-            // rdbDesc
-            // 
-            this.rdbDesc.AutoSize = true;
-            this.rdbDesc.Location = new System.Drawing.Point(83, 29);
-            this.rdbDesc.Name = "rdbDesc";
-            this.rdbDesc.Size = new System.Drawing.Size(109, 20);
-            this.rdbDesc.TabIndex = 17;
-            this.rdbDesc.TabStop = true;
-            this.rdbDesc.Text = "Mais recentes";
-            this.rdbDesc.UseVisualStyleBackColor = true;
-            this.rdbDesc.Click += new System.EventHandler(this.rdbDesc_Click);
             // 
             // gpbItensVenda
             // 
@@ -165,9 +127,6 @@ namespace Sistema_Elitt
             // 
             // gpbVendasD
             // 
-            this.gpbVendasD.Controls.Add(this.label1);
-            this.gpbVendasD.Controls.Add(this.rdbMad);
-            this.gpbVendasD.Controls.Add(this.rdbMrd);
             this.gpbVendasD.Controls.Add(this.dgvVendasD);
             this.gpbVendasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbVendasD.Location = new System.Drawing.Point(469, 101);
@@ -176,39 +135,6 @@ namespace Sistema_Elitt
             this.gpbVendasD.TabIndex = 20;
             this.gpbVendasD.TabStop = false;
             this.gpbVendasD.Text = "Dinheiro";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Iniciar dos:";
-            // 
-            // rdbMad
-            // 
-            this.rdbMad.AutoSize = true;
-            this.rdbMad.Location = new System.Drawing.Point(190, 27);
-            this.rdbMad.Name = "rdbMad";
-            this.rdbMad.Size = new System.Drawing.Size(101, 20);
-            this.rdbMad.TabIndex = 18;
-            this.rdbMad.Text = "Mais antigos";
-            this.rdbMad.UseVisualStyleBackColor = true;
-            this.rdbMad.CheckedChanged += new System.EventHandler(this.rdbMad_CheckedChanged);
-            // 
-            // rdbMrd
-            // 
-            this.rdbMrd.AutoSize = true;
-            this.rdbMrd.Checked = true;
-            this.rdbMrd.Location = new System.Drawing.Point(83, 27);
-            this.rdbMrd.Name = "rdbMrd";
-            this.rdbMrd.Size = new System.Drawing.Size(109, 20);
-            this.rdbMrd.TabIndex = 17;
-            this.rdbMrd.TabStop = true;
-            this.rdbMrd.Text = "Mais recentes";
-            this.rdbMrd.UseVisualStyleBackColor = true;
-            this.rdbMrd.CheckedChanged += new System.EventHandler(this.rdbMrd_CheckedChanged);
             // 
             // dgvVendasD
             // 
@@ -345,6 +271,31 @@ namespace Sistema_Elitt
             this.label6.TabIndex = 31;
             this.label6.Text = ":";
             // 
+            // cmbCredDeb
+            // 
+            this.cmbCredDeb.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cmbCredDeb.AutoCompleteCustomSource.AddRange(new string[] {
+            ""});
+            this.cmbCredDeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCredDeb.FormattingEnabled = true;
+            this.cmbCredDeb.Items.AddRange(new object[] {
+            "Crédito",
+            "Débito"});
+            this.cmbCredDeb.Location = new System.Drawing.Point(101, 32);
+            this.cmbCredDeb.Name = "cmbCredDeb";
+            this.cmbCredDeb.Size = new System.Drawing.Size(126, 28);
+            this.cmbCredDeb.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Cred/Deb";
+            // 
             // FConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,7 +326,6 @@ namespace Sistema_Elitt
             this.gpbItensVenda.ResumeLayout(false);
             this.gpbItensVenda.PerformLayout();
             this.gpbVendasD.ResumeLayout(false);
-            this.gpbVendasD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendasD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -387,15 +337,9 @@ namespace Sistema_Elitt
         private System.Windows.Forms.DataGridView dgvVendas;
         private System.Windows.Forms.DataGridView dgvProdutosVenda;
         private System.Windows.Forms.GroupBox gpbVendas;
-        private System.Windows.Forms.Label lblOrdenar;
-        private System.Windows.Forms.RadioButton rdbAsc;
-        private System.Windows.Forms.RadioButton rdbDesc;
         private System.Windows.Forms.GroupBox gpbItensVenda;
         private System.Windows.Forms.Label lblTotalVenda;
         private System.Windows.Forms.GroupBox gpbVendasD;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rdbMad;
-        private System.Windows.Forms.RadioButton rdbMrd;
         private System.Windows.Forms.DataGridView dgvVendasD;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label label2;
@@ -408,5 +352,7 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCredDeb;
     }
 }

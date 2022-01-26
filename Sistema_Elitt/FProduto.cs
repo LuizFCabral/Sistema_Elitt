@@ -42,10 +42,12 @@ namespace Sistema_Elitt
 
         //Limpar campos
 
+        //Atualizar tabela
         private void atualizarLista(string pesquisa)
         {
             DataTable r;
             ProdutoDAO dao;
+            int totalProd = 0;
             try
             {
                 dao = new ProdutoDAO();
@@ -62,6 +64,13 @@ namespace Sistema_Elitt
                 r.Columns[2].ColumnName = "Preço";
                 r.Columns[3].ColumnName = "Quantidade";
                 dgvProdutos.DataSource = r;
+                lblQtdeItens.Text=dgvProdutos.Rows.Count.ToString();
+                for(int i = 0; i < dgvProdutos.Rows.Count; i++)
+                {
+                    totalProd += Convert.ToInt32(dgvProdutos.Rows[i].Cells[3].Value);
+                }
+                lblQtdeProdutos.Text=totalProd.ToString();
+
                 LimparCampos();
             }
             catch(Exception ex)
@@ -69,6 +78,7 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao fazer a consulta de produtos: " + ex.Message);
             }
         }
+        //Atualizar tabela
         private void mostrarSelecao(Produto select)
         {
             try

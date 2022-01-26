@@ -52,8 +52,9 @@ namespace Sistema_Elitt
             this.label1 = new System.Windows.Forms.Label();
             this.txtTroco = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.rdbCartao = new System.Windows.Forms.RadioButton();
-            this.rdbDinheiro = new System.Windows.Forms.RadioButton();
+            this.cmbTipoVenda = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.caixaDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -63,6 +64,7 @@ namespace Sistema_Elitt
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.caixaDoDiaToolStripMenuItem,
             this.btnProd,
             this.btnConsulta});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -308,38 +310,43 @@ namespace Sistema_Elitt
             this.label2.TabIndex = 22;
             this.label2.Text = "Troco : ";
             // 
-            // rdbCartao
+            // cmbTipoVenda
             // 
-            this.rdbCartao.AutoSize = true;
-            this.rdbCartao.Checked = true;
-            this.rdbCartao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbCartao.Location = new System.Drawing.Point(614, 453);
-            this.rdbCartao.Name = "rdbCartao";
-            this.rdbCartao.Size = new System.Drawing.Size(75, 24);
-            this.rdbCartao.TabIndex = 23;
-            this.rdbCartao.TabStop = true;
-            this.rdbCartao.Text = "Cartão";
-            this.rdbCartao.UseVisualStyleBackColor = true;
+            this.cmbTipoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoVenda.FormattingEnabled = true;
+            this.cmbTipoVenda.Items.AddRange(new object[] {
+            "Dinheiro",
+            "Crédito",
+            "Débito"});
+            this.cmbTipoVenda.Location = new System.Drawing.Point(597, 481);
+            this.cmbTipoVenda.Name = "cmbTipoVenda";
+            this.cmbTipoVenda.Size = new System.Drawing.Size(189, 28);
+            this.cmbTipoVenda.TabIndex = 23;
             // 
-            // rdbDinheiro
+            // label3
             // 
-            this.rdbDinheiro.AutoSize = true;
-            this.rdbDinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbDinheiro.Location = new System.Drawing.Point(695, 453);
-            this.rdbDinheiro.Name = "rdbDinheiro";
-            this.rdbDinheiro.Size = new System.Drawing.Size(86, 24);
-            this.rdbDinheiro.TabIndex = 24;
-            this.rdbDinheiro.TabStop = true;
-            this.rdbDinheiro.Text = "Dinheiro";
-            this.rdbDinheiro.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(593, 455);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Tipo da Venda";
+            // 
+            // caixaDoDiaToolStripMenuItem
+            // 
+            this.caixaDoDiaToolStripMenuItem.Name = "caixaDoDiaToolStripMenuItem";
+            this.caixaDoDiaToolStripMenuItem.Size = new System.Drawing.Size(108, 25);
+            this.caixaDoDiaToolStripMenuItem.Text = "Caixa do Dia";
+            this.caixaDoDiaToolStripMenuItem.Click += new System.EventHandler(this.caixaDoDiaToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 579);
-            this.Controls.Add(this.rdbDinheiro);
-            this.Controls.Add(this.rdbCartao);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbTipoVenda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.txtRecebido);
@@ -389,8 +396,9 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTroco;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rdbCartao;
-        private System.Windows.Forms.RadioButton rdbDinheiro;
+        private System.Windows.Forms.ComboBox cmbTipoVenda;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem caixaDoDiaToolStripMenuItem;
     }
 }
 

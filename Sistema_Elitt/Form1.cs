@@ -24,6 +24,7 @@ namespace Sistema_Elitt
             dgvVenda.Columns.Add("preco", "Preço unitário");
             dgvVenda.Columns.Add("qtde", "Quantidade");
             dgvVenda.Columns.Add("total", "Valor");
+            cmbTipoVenda.SelectedIndex = 0;
         }
 
 
@@ -40,6 +41,17 @@ namespace Sistema_Elitt
         }
 
         private void btnConsulta_Click(object sender, EventArgs e)
+        {
+            FConsultas f = new FConsultas();
+            if (Application.OpenForms.OfType<FProduto>().Count() > 0)
+            {
+                f.BringToFront();
+                this.SendToBack();
+            }
+            else
+                f.Show();
+        }
+        private void caixaDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FConsultas f = new FConsultas();
             if (Application.OpenForms.OfType<FProduto>().Count() > 0)
@@ -234,11 +246,23 @@ namespace Sistema_Elitt
                 else
                 {
                     objV = new Venda();
-                    string tipo;
-                    if (rdbCartao.Checked)
-                        tipo = "cartao";
-                    else
-                        tipo = "dinheiro";
+                    string tipo = "";
+                    switch (cmbTipoVenda.Text)
+                    {
+                        case "Dinheiro":
+                            tipo = "dinheiro";
+                            break;
+                        case "Crédito":
+                            tipo = "cartao/credito";
+                            break;
+                        case "Débito":
+                            tipo = "cartao/debito";
+                            break;
+                        default:
+                            break;
+                    }
+                    MessageBox.Show(tipo);
+
                     objV.setTipo(tipo);
                     objV.setDataV(DateTime.Now);
                     objV.setTotal(txtTotal.Text);
@@ -349,10 +373,7 @@ namespace Sistema_Elitt
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location = new Point(0, 0);
-            this.Size = new Size(w, h);
+            
         }
 
     }

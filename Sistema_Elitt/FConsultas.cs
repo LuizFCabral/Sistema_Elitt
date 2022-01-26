@@ -20,8 +20,8 @@ namespace Sistema_Elitt
             {
                 VendaDAO dao = new VendaDAO();
                 gpbItensVenda.Hide();
-                rdbDesc.Checked = true;
                 cmbFiltro.SelectedIndex = 0;
+                cmbCredDeb.SelectedIndex = 0;
                 dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao", "day");
                 dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", "day");
                 somatoriaVendas();
@@ -67,66 +67,6 @@ namespace Sistema_Elitt
         }
         //Somatoria de vendas
 
-        private void rdbs(string tipo, string arg)
-        {
-            try
-            {
-                VendaDAO dao = new VendaDAO();
-                string filtro = cmbFiltro.Text;
-                if (filtro == "Dia")
-                    filtro = "day";
-                else
-                {
-                    if (filtro == "Mês")
-                        filtro = "month";
-                    else
-                    {
-                        if (filtro == "Ano")
-                            filtro = "year";
-                    }
-                }
-
-                if (tipo == "cartao")
-                {
-                    if(tipo == "recente")
-                        dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao", filtro);
-                    else
-                        dgvVendas.DataSource = dao.listarVendaTipoData("ASC", "cartao", filtro);
-                }
-                else
-                {
-                    if (tipo == "recente")
-                        dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", filtro);
-                    else
-                        dgvVendasD.DataSource = dao.listarVendaTipoData("ASC", "dinheiro", filtro);
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao alterar parâmetro de ordenação para 'mais recentes primeiro': " + ex.Message);
-            }
-        }
-
-        private void rdbDesc_Click(object sender, EventArgs e)
-        {
-            rdbs("cartao", "recente");
-        }
-
-        private void rdbAsc_Click(object sender, EventArgs e)
-        {
-            rdbs("cartao", "antigo");
-        }
-
-        private void rdbMrd_CheckedChanged(object sender, EventArgs e)
-        {
-            rdbs("cartao", "recente");
-        }
-
-        private void rdbMad_CheckedChanged(object sender, EventArgs e)
-        {
-            rdbs("cartao", "antigo");
-        }
 
         private void dgvVendas_DoubleClick(object sender, EventArgs e)
         {
