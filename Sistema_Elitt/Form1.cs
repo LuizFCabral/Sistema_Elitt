@@ -29,15 +29,26 @@ namespace Sistema_Elitt
 
         //Menu
         private void btnProd_Click(object sender, EventArgs e)
-        {
-            FProduto f = new FProduto();
-            f.ShowDialog();
+        {   FProduto f = new FProduto();
+            if (Application.OpenForms.OfType<FProduto>().Count() > 0 )
+            {
+                f.BringToFront();
+                this.SendToBack();
+            }
+            else
+                f.Show();
         }
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             FConsultas f = new FConsultas();
-            f.ShowDialog();
+            if (Application.OpenForms.OfType<FProduto>().Count() > 0)
+            {
+                f.BringToFront();
+                this.SendToBack();
+            }
+            else
+                f.Show();
         }
         //Menu
 
@@ -291,7 +302,7 @@ namespace Sistema_Elitt
             }
         }
 
-        private void txtRecebido_Leave(object sender, EventArgs e)
+        private void calculaTroco()
         {
             double total, recebido;
             if(txtRecebido.Text.Length <= 0)
@@ -302,11 +313,20 @@ namespace Sistema_Elitt
             {
                 recebido = Convert.ToDouble(txtRecebido.Text);
             }
-            total = Convert.ToDouble(txtTotal.Text);
+            total = Convert.ToDouble(String.Format("{0:0.00}", txtTotal.Text));
             if (total < recebido)
-                txtTroco.Text = (recebido - total).ToString();
+                txtTroco.Text = String.Format("{0:0.00}", (recebido - total));
             else
-                txtTroco.Text = "00,00";
+                txtTroco.Text = "0,00";
+        }
+
+        private void txtRecebido_KeyUp(object sender, KeyEventArgs e)
+        {
+            calculaTroco();
+        }
+        private void txtRecebido_Leave(object sender, EventArgs e)
+        {
+            calculaTroco();
         }
 
         private void txtRecebido_KeyPress(object sender, KeyPressEventArgs e)
@@ -334,5 +354,6 @@ namespace Sistema_Elitt
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
         }
+
     }
 }

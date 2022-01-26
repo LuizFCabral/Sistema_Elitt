@@ -53,29 +53,6 @@ namespace Sistema_Elitt
             }
 
         }
-        public DataTable listarOrderTemporal(string direcao)
-        {
-            Banco whisper = null;
-
-            try
-            {
-                whisper = new Banco();
-                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda order by datav " + direcao;
-                whisper.dreader = whisper.comando.ExecuteReader();
-                whisper.tabela = new DataTable();
-                whisper.tabela.Load(whisper.dreader);
-                Banco.conexao.Close();
-                whisper.tabela.Columns[0].ColumnName = "Código";
-                whisper.tabela.Columns[1].ColumnName = "Tipo";
-                whisper.tabela.Columns[2].ColumnName = "Total";
-                whisper.tabela.Columns[3].ColumnName = "Data da venda";
-                return (whisper.tabela);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao listar venda: " + ex.Message);
-            }
-        }
         public DataTable listarVendaTipo(string direcao, string tipo)
         {
             Banco whisper = null;
@@ -100,6 +77,7 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao listar venda: " + ex.Message);
             }
         }
+
         public int alterar(Venda obj)
         {
             Banco whisper = null;
@@ -123,6 +101,8 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao alterar venda: " + ex.Message);
             }
         }
+
+
 
     }
 }

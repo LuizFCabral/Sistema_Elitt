@@ -97,33 +97,17 @@ namespace Sistema_Elitt
             }
         }
 
-        private void dgvVendasD_DoubleClick(object sender, EventArgs e)
-        {
-            ItemDAO dao;
-            int cod;
-            DateTime dT;
-            try
-            {
-                cod = (int)dgvVendasD.SelectedCells[0].Value;
-                lblTotalVenda.Text = "Valor total: R$" + String.Format("{0:0.00}", dgvVendasD.SelectedCells[2].Value);
-                dT = (DateTime)dgvVendasD.SelectedCells[3].Value;
-                dao = new ItemDAO();
-                gpbItensVenda.Text = "Itens da venda " + " de código " + cod + " realizada em: " + dT.ToString();
-                dgvProdutosVenda.DataSource = dao.listarCodVenda(cod);
-                gpbItensVenda.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao selecionar uma venda para mostrar seus itens: " + ex.Message);
-            }
-        }
-
         private void FConsultas_Load(object sender, EventArgs e)
         {
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Sistema_Elitt
             this.rdbMad = new System.Windows.Forms.RadioButton();
             this.rdbMrd = new System.Windows.Forms.RadioButton();
             this.dgvVendasD = new System.Windows.Forms.DataGridView();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.gpbVendas.SuspendLayout();
@@ -62,7 +64,7 @@ namespace Sistema_Elitt
             this.dgvVendas.ReadOnly = true;
             this.dgvVendas.RowHeadersVisible = false;
             this.dgvVendas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendas.Size = new System.Drawing.Size(415, 376);
+            this.dgvVendas.Size = new System.Drawing.Size(439, 376);
             this.dgvVendas.TabIndex = 16;
             this.dgvVendas.TabStop = false;
             this.dgvVendas.DoubleClick += new System.EventHandler(this.dgvVendas_DoubleClick);
@@ -90,9 +92,9 @@ namespace Sistema_Elitt
             this.gpbVendas.Controls.Add(this.rdbDesc);
             this.gpbVendas.Controls.Add(this.dgvVendas);
             this.gpbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendas.Location = new System.Drawing.Point(12, 75);
+            this.gpbVendas.Location = new System.Drawing.Point(12, 177);
             this.gpbVendas.Name = "gpbVendas";
-            this.gpbVendas.Size = new System.Drawing.Size(427, 448);
+            this.gpbVendas.Size = new System.Drawing.Size(451, 448);
             this.gpbVendas.TabIndex = 18;
             this.gpbVendas.TabStop = false;
             this.gpbVendas.Text = "Vendas Cartão";
@@ -135,7 +137,7 @@ namespace Sistema_Elitt
             this.gpbItensVenda.Controls.Add(this.lblTotalVenda);
             this.gpbItensVenda.Controls.Add(this.dgvProdutosVenda);
             this.gpbItensVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbItensVenda.Location = new System.Drawing.Point(890, 75);
+            this.gpbItensVenda.Location = new System.Drawing.Point(931, 177);
             this.gpbItensVenda.Name = "gpbItensVenda";
             this.gpbItensVenda.Size = new System.Drawing.Size(421, 448);
             this.gpbItensVenda.TabIndex = 19;
@@ -159,9 +161,9 @@ namespace Sistema_Elitt
             this.gpbVendasD.Controls.Add(this.rdbMrd);
             this.gpbVendasD.Controls.Add(this.dgvVendasD);
             this.gpbVendasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendasD.Location = new System.Drawing.Point(445, 75);
+            this.gpbVendasD.Location = new System.Drawing.Point(469, 177);
             this.gpbVendasD.Name = "gpbVendasD";
-            this.gpbVendasD.Size = new System.Drawing.Size(427, 448);
+            this.gpbVendasD.Size = new System.Drawing.Size(451, 448);
             this.gpbVendasD.TabIndex = 20;
             this.gpbVendasD.TabStop = false;
             this.gpbVendasD.Text = "Vendas Dinheiro";
@@ -211,21 +213,51 @@ namespace Sistema_Elitt
             this.dgvVendasD.ReadOnly = true;
             this.dgvVendasD.RowHeadersVisible = false;
             this.dgvVendasD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVendasD.Size = new System.Drawing.Size(415, 376);
+            this.dgvVendasD.Size = new System.Drawing.Size(439, 376);
             this.dgvVendasD.TabIndex = 16;
             this.dgvVendasD.TabStop = false;
-            this.dgvVendasD.DoubleClick += new System.EventHandler(this.dgvVendasD_DoubleClick);
+            this.dgvVendasD.DoubleClick += new System.EventHandler(this.dgvVendas_DoubleClick);
+            // 
+            // cmbFiltro
+            // 
+            this.cmbFiltro.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cmbFiltro.AutoCompleteCustomSource.AddRange(new string[] {
+            ""});
+            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Items.AddRange(new object[] {
+            "Dia",
+            "Mês",
+            "Ano"});
+            this.cmbFiltro.Location = new System.Drawing.Point(21, 80);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(126, 28);
+            this.cmbFiltro.TabIndex = 1;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Filtro da consulta";
             // 
             // FConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1323, 582);
+            this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.gpbVendasD);
             this.Controls.Add(this.gpbItensVenda);
             this.Controls.Add(this.gpbVendas);
             this.Name = "FConsultas";
             this.Text = "Conulta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
@@ -237,6 +269,7 @@ namespace Sistema_Elitt
             this.gpbVendasD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendasD)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -255,5 +288,7 @@ namespace Sistema_Elitt
         private System.Windows.Forms.RadioButton rdbMad;
         private System.Windows.Forms.RadioButton rdbMrd;
         private System.Windows.Forms.DataGridView dgvVendasD;
+        private System.Windows.Forms.ComboBox cmbFiltro;
+        private System.Windows.Forms.Label label2;
     }
 }

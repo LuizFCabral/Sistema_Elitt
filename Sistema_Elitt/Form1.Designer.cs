@@ -274,6 +274,7 @@ namespace Sistema_Elitt
             this.txtRecebido.TabIndex = 19;
             this.txtRecebido.TabStop = false;
             this.txtRecebido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRecebido_KeyPress);
+            this.txtRecebido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecebido_KeyUp);
             this.txtRecebido.Leave += new System.EventHandler(this.txtRecebido_Leave);
             // 
             // label1
@@ -351,6 +352,7 @@ namespace Sistema_Elitt
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
