@@ -93,6 +93,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="FAberturaCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAberturaCaixa.Designer.cs">
+      <DependentUpon>FAberturaCaixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCaixaDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCaixaDia.Designer.cs">
+      <DependentUpon>FCaixaDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FConsultaGraf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +117,7 @@
     <Compile Include="FConsultarProdutos.Designer.cs">
       <DependentUpon>FConsultarProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
@@ -130,6 +140,8 @@
       <DependentUpon>FQtde.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="FundoCaixa.cs" />
+    <Compile Include="FundoCaixaDAO.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemDAO.cs" />
     <Compile Include="Produto.cs" />
@@ -138,6 +150,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Venda.cs" />
     <Compile Include="VendaDAO.cs" />
+    <EmbeddedResource Include="FAberturaCaixa.resx">
+      <DependentUpon>FAberturaCaixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCaixaDia.resx">
+      <DependentUpon>FCaixaDia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FConsultaGraf.resx">
       <DependentUpon>FConsultaGraf.cs</DependentUpon>
     </EmbeddedResource>

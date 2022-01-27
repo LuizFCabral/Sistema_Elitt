@@ -32,6 +32,8 @@ namespace Sistema_Elitt
             this.dgvVendas = new System.Windows.Forms.DataGridView();
             this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.gpbVendas = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCredDeb = new System.Windows.Forms.ComboBox();
             this.gpbItensVenda = new System.Windows.Forms.GroupBox();
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.gpbVendasD = new System.Windows.Forms.GroupBox();
@@ -47,8 +49,6 @@ namespace Sistema_Elitt
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbCredDeb = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.gpbVendas.SuspendLayout();
@@ -96,19 +96,44 @@ namespace Sistema_Elitt
             this.gpbVendas.Controls.Add(this.cmbCredDeb);
             this.gpbVendas.Controls.Add(this.dgvVendas);
             this.gpbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendas.Location = new System.Drawing.Point(12, 101);
+            this.gpbVendas.Location = new System.Drawing.Point(10, 146);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(451, 448);
             this.gpbVendas.TabIndex = 18;
             this.gpbVendas.TabStop = false;
             this.gpbVendas.Text = "Cartão";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Cred/Deb";
+            // 
+            // cmbCredDeb
+            // 
+            this.cmbCredDeb.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cmbCredDeb.AutoCompleteCustomSource.AddRange(new string[] {
+            ""});
+            this.cmbCredDeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCredDeb.FormattingEnabled = true;
+            this.cmbCredDeb.Items.AddRange(new object[] {
+            "Crédito",
+            "Débito"});
+            this.cmbCredDeb.Location = new System.Drawing.Point(101, 32);
+            this.cmbCredDeb.Name = "cmbCredDeb";
+            this.cmbCredDeb.Size = new System.Drawing.Size(126, 28);
+            this.cmbCredDeb.TabIndex = 32;
+            // 
             // gpbItensVenda
             // 
             this.gpbItensVenda.Controls.Add(this.lblTotalVenda);
             this.gpbItensVenda.Controls.Add(this.dgvProdutosVenda);
             this.gpbItensVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbItensVenda.Location = new System.Drawing.Point(931, 101);
+            this.gpbItensVenda.Location = new System.Drawing.Point(940, 146);
             this.gpbItensVenda.Name = "gpbItensVenda";
             this.gpbItensVenda.Size = new System.Drawing.Size(410, 448);
             this.gpbItensVenda.TabIndex = 19;
@@ -129,7 +154,7 @@ namespace Sistema_Elitt
             // 
             this.gpbVendasD.Controls.Add(this.dgvVendasD);
             this.gpbVendasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendasD.Location = new System.Drawing.Point(469, 101);
+            this.gpbVendasD.Location = new System.Drawing.Point(467, 146);
             this.gpbVendasD.Name = "gpbVendasD";
             this.gpbVendasD.Size = new System.Drawing.Size(451, 448);
             this.gpbVendasD.TabIndex = 20;
@@ -165,7 +190,7 @@ namespace Sistema_Elitt
             "Mês",
             "Ano",
             "Todas as vendas"});
-            this.cmbFiltro.Location = new System.Drawing.Point(21, 55);
+            this.cmbFiltro.Location = new System.Drawing.Point(19, 100);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(126, 28);
             this.cmbFiltro.TabIndex = 1;
@@ -175,7 +200,7 @@ namespace Sistema_Elitt
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 32);
+            this.label2.Location = new System.Drawing.Point(15, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 20);
             this.label2.TabIndex = 22;
@@ -185,7 +210,7 @@ namespace Sistema_Elitt
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(50, 623);
+            this.lbl2.Location = new System.Drawing.Point(48, 642);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(117, 40);
             this.lbl2.TabIndex = 23;
@@ -195,7 +220,7 @@ namespace Sistema_Elitt
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(263, 623);
+            this.lbl3.Location = new System.Drawing.Point(261, 642);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(117, 40);
             this.lbl3.TabIndex = 24;
@@ -205,7 +230,7 @@ namespace Sistema_Elitt
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(479, 623);
+            this.label3.Location = new System.Drawing.Point(477, 642);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 20);
             this.label3.TabIndex = 25;
@@ -215,7 +240,7 @@ namespace Sistema_Elitt
             // 
             this.lblTotalVendaC.AutoSize = true;
             this.lblTotalVendaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVendaC.Location = new System.Drawing.Point(173, 632);
+            this.lblTotalVendaC.Location = new System.Drawing.Point(171, 651);
             this.lblTotalVendaC.Name = "lblTotalVendaC";
             this.lblTotalVendaC.Size = new System.Drawing.Size(34, 20);
             this.lblTotalVendaC.TabIndex = 26;
@@ -225,7 +250,7 @@ namespace Sistema_Elitt
             // 
             this.lblTotalVendaD.AutoSize = true;
             this.lblTotalVendaD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVendaD.Location = new System.Drawing.Point(386, 632);
+            this.lblTotalVendaD.Location = new System.Drawing.Point(384, 651);
             this.lblTotalVendaD.Name = "lblTotalVendaD";
             this.lblTotalVendaD.Size = new System.Drawing.Size(34, 20);
             this.lblTotalVendaD.TabIndex = 27;
@@ -235,7 +260,7 @@ namespace Sistema_Elitt
             // 
             this.lblTotalDasVendas.AutoSize = true;
             this.lblTotalDasVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDasVendas.Location = new System.Drawing.Point(667, 623);
+            this.lblTotalDasVendas.Location = new System.Drawing.Point(665, 642);
             this.lblTotalDasVendas.Name = "lblTotalDasVendas";
             this.lblTotalDasVendas.Size = new System.Drawing.Size(34, 20);
             this.lblTotalDasVendas.TabIndex = 28;
@@ -245,7 +270,7 @@ namespace Sistema_Elitt
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(163, 632);
+            this.label4.Location = new System.Drawing.Point(161, 651);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 20);
             this.label4.TabIndex = 29;
@@ -255,7 +280,7 @@ namespace Sistema_Elitt
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(376, 632);
+            this.label5.Location = new System.Drawing.Point(374, 651);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 20);
             this.label5.TabIndex = 30;
@@ -265,36 +290,11 @@ namespace Sistema_Elitt
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(655, 623);
+            this.label6.Location = new System.Drawing.Point(653, 642);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 20);
             this.label6.TabIndex = 31;
             this.label6.Text = ":";
-            // 
-            // cmbCredDeb
-            // 
-            this.cmbCredDeb.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.cmbCredDeb.AutoCompleteCustomSource.AddRange(new string[] {
-            ""});
-            this.cmbCredDeb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCredDeb.FormattingEnabled = true;
-            this.cmbCredDeb.Items.AddRange(new object[] {
-            "Crédito",
-            "Débito"});
-            this.cmbCredDeb.Location = new System.Drawing.Point(101, 32);
-            this.cmbCredDeb.Name = "cmbCredDeb";
-            this.cmbCredDeb.Size = new System.Drawing.Size(126, 28);
-            this.cmbCredDeb.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Cred/Deb";
             // 
             // FConsultas
             // 

@@ -8,9 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Sistema_Elitt.Functions;
+using static Sistema_Elitt.FAberturaCaixa;
+
 
 namespace Sistema_Elitt
 {
+    public static class Global
+    {
+        public static string abertura;
+    }
     public partial class Form1 : Form
     {
         private int linha;
@@ -53,8 +59,8 @@ namespace Sistema_Elitt
         }
         private void caixaDoDiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FConsultas f = new FConsultas();
-            if (Application.OpenForms.OfType<FProduto>().Count() > 0)
+            FCaixaDia f = new FCaixaDia();
+            if (Application.OpenForms.OfType<FCaixaDia>().Count() > 0)
             {
                 f.BringToFront();
                 this.SendToBack();
@@ -373,6 +379,22 @@ namespace Sistema_Elitt
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            FAberturaCaixa f = new FAberturaCaixa();
+            FAberturaCaixa f2 = new FAberturaCaixa();
+            FundoCaixa obj = new FundoCaixa();
+            FundoCaixaDAO dao = new FundoCaixaDAO();
+            try
+            {
+                f.ShowDialog();
+                if (f.selection)
+                {
+                    Global.abertura = f.txtAbertura.Text;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             
         }
 
