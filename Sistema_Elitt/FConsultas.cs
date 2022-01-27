@@ -22,7 +22,7 @@ namespace Sistema_Elitt
                 gpbItensVenda.Hide();
                 cmbFiltro.SelectedIndex = 0;
                 cmbCredDeb.SelectedIndex = 0;
-                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao", "day");
+                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao/credito", "day");
                 dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", "day");
                 somatoriaVendas();
             }
@@ -101,6 +101,7 @@ namespace Sistema_Elitt
         {
             VendaDAO dao = new VendaDAO();
             string filtro = cmbFiltro.Text;
+            string tipo = cmbCredDeb.Text;
             bool todas = false;
             try
             {
@@ -123,12 +124,12 @@ namespace Sistema_Elitt
 
                 if (todas)
                 {
-                    dgvVendas.DataSource = dao.listarVendaTipo("DESC", "cartao");
+                    dgvVendas.DataSource = dao.listarVendaTipo("DESC", tipo);
                     dgvVendasD.DataSource = dao.listarVendaTipo("DESC", "dinheiro");
                 }
                 else
                 {
-                    dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao", filtro);
+                    dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, filtro);
                     dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", filtro);    
                 }
 
@@ -156,6 +157,38 @@ namespace Sistema_Elitt
             {
                 MessageBox.Show("Erro ao selecionar uma venda para mostrar seus itens: " + ex.Message);
             }
+        }
+
+        private void cmbCredDeb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = cmbFiltro.Text;
+            string tipo = cmbCredDeb.Text;
+            VendaDAO dao = new VendaDAO();
+            try
+            {
+                if (filtro == "Dia")
+                    filtro = "day";
+                else
+                {
+                    if (filtro == "Mês")
+                        filtro = "month";
+                    else
+                    {
+                        if (filtro == "Ano")
+                            filtro = "year";
+                    }
+                }
+
+                if (tipo == "Crédito")
+                    tipo = "cartao/credito";
+                else
+                    tipo = "cartao/debito";
+
+                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, filtro);
+                somatoriaVendas();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+
         }
     }
 }

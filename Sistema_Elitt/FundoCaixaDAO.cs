@@ -18,7 +18,7 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into FundoCaixa(abertura, totalDia, dataFundo) values(@d, @p, @q)";
+                whisper.comando.CommandText = "Insert into FundoCaixa(abertura, totalDia, dataFundo) values(@d, @p, @dv)";
                 whisper.comando.Parameters.Add("@d", NpgsqlDbType.Double).Value = obj.abertura;
                 whisper.comando.Parameters.Add("@p", NpgsqlDbType.Double).Value = obj.totalDia;
                 whisper.comando.Parameters.Add("@dv", NpgsqlDbType.Timestamp).Value = obj.dataFundo;
@@ -40,7 +40,7 @@ namespace Sistema_Elitt
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Insert into FundoCaixa(abertura, totalDia, dataFundo) values(@d, @p, @q) returning cod";
+                whisper.comando.CommandText = "Insert into FundoCaixa(abertura, totalDia, dataFundo) values(@d, @p, @dv) returning cod";
                 whisper.comando.Parameters.Add("@d", NpgsqlDbType.Double).Value = obj.abertura;
                 whisper.comando.Parameters.Add("@p", NpgsqlDbType.Double).Value = obj.totalDia;
                 whisper.comando.Parameters.Add("@dv", NpgsqlDbType.Timestamp).Value = obj.dataFundo;

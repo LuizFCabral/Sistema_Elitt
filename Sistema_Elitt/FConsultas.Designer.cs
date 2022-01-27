@@ -127,6 +127,7 @@ namespace Sistema_Elitt
             this.cmbCredDeb.Name = "cmbCredDeb";
             this.cmbCredDeb.Size = new System.Drawing.Size(126, 28);
             this.cmbCredDeb.TabIndex = 32;
+            this.cmbCredDeb.SelectedIndexChanged += new System.EventHandler(this.cmbCredDeb_SelectedIndexChanged);
             // 
             // gpbItensVenda
             // 

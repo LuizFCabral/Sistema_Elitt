@@ -131,4 +131,4 @@ C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sist
 C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.pdb
 C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.FAberturaCaixa.resources
 C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.FCaixaDia.resources
-C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.Global.resources
+C:\Users\super\Documents\MeusProjetos\Sistema_Elitt\Sistema_Elitt\obj\Debug\Sistema_Elitt.Form1.resources

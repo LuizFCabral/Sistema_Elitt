@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Sistema_Elitt.Functions;
 using static Sistema_Elitt.FAberturaCaixa;
+using static Sistema_Elitt.FCaixaDia;
 
 
 namespace Sistema_Elitt
 {
-    public static class Global
-    {
-        public static string abertura;
-    }
+    
     public partial class Form1 : Form
     {
         private int linha;
@@ -31,6 +29,7 @@ namespace Sistema_Elitt
             dgvVenda.Columns.Add("qtde", "Quantidade");
             dgvVenda.Columns.Add("total", "Valor");
             cmbTipoVenda.SelectedIndex = 0;
+            
         }
 
 
@@ -243,6 +242,7 @@ namespace Sistema_Elitt
             Produto objP;
             ProdutoDAO daoP;
             int i, qtdeAntigo;
+            FCaixaDia fcaixadia = new FCaixaDia();
             try
             {
                 if (dgvVenda.Rows.Count <= 0)
@@ -267,7 +267,6 @@ namespace Sistema_Elitt
                         default:
                             break;
                     }
-                    MessageBox.Show(tipo);
 
                     objV.setTipo(tipo);
                     objV.setDataV(DateTime.Now);
@@ -398,5 +397,9 @@ namespace Sistema_Elitt
             
         }
 
+    }
+    public static class Global
+    {
+        public static string abertura;
     }
 }
