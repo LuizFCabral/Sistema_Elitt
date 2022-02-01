@@ -49,12 +49,15 @@ namespace Sistema_Elitt
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnConsultarFC = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.gpbVendas.SuspendLayout();
             this.gpbItensVenda.SuspendLayout();
             this.gpbVendasD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendasD)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvVendas
@@ -297,6 +300,24 @@ namespace Sistema_Elitt
             this.label6.TabIndex = 31;
             this.label6.Text = ":";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnConsultarFC});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1364, 29);
+            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnConsultarFC
+            // 
+            this.btnConsultarFC.Name = "btnConsultarFC";
+            this.btnConsultarFC.Size = new System.Drawing.Size(155, 20);
+            this.btnConsultarFC.Text = "Consultar Fundo de Caixa";
+            this.btnConsultarFC.Click += new System.EventHandler(this.btnConsultarFC_Click);
+            // 
             // FConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +337,8 @@ namespace Sistema_Elitt
             this.Controls.Add(this.gpbVendasD);
             this.Controls.Add(this.gpbItensVenda);
             this.Controls.Add(this.gpbVendas);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FConsultas";
             this.Text = "Conulta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -328,6 +351,8 @@ namespace Sistema_Elitt
             this.gpbItensVenda.PerformLayout();
             this.gpbVendasD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendasD)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +380,7 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCredDeb;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btnConsultarFC;
     }
 }

@@ -111,6 +111,12 @@
     <Compile Include="FConsultaGraf.Designer.cs">
       <DependentUpon>FConsultaGraf.cs</DependentUpon>
     </Compile>
+    <Compile Include="FConsultarFC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FConsultarFC.Designer.cs">
+      <DependentUpon>FConsultarFC.cs</DependentUpon>
+    </Compile>
     <Compile Include="FConsultarProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FConsultaGraf.resx">
       <DependentUpon>FConsultaGraf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FConsultarFC.resx">
+      <DependentUpon>FConsultarFC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FConsultarProdutos.resx">
       <DependentUpon>FConsultarProdutos.cs</DependentUpon>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static Sistema_Elitt.Functions;
 using static Sistema_Elitt.FAberturaCaixa;
 using static Sistema_Elitt.FCaixaDia;
+using static Sistema_Elitt.Global;
 
 
 namespace Sistema_Elitt
@@ -398,8 +399,5 @@ namespace Sistema_Elitt
         }
 
     }
-    public static class Global
-    {
-        public static string abertura;
-    }
+    
 }

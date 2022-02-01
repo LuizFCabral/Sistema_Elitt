@@ -68,13 +68,44 @@ namespace Sistema_Elitt
                 whisper.tabela = new DataTable();
                 whisper.tabela.Load(whisper.dreader);
                 Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Abertura";
+                whisper.tabela.Columns[1].ColumnName = "Total do Dia";
+                whisper.tabela.Columns[2].ColumnName = "Data";
                 return (whisper.tabela);
             }
             catch (Exception ex)
             {
                 throw new Exception("Erro ao listar fundoCaixa: " + ex.Message);
             }
-        }public DataTable buscarHoje()
+        }
+        
+        public DataTable listarFiltrado(DateTime dataI, DateTime dataF)
+        {
+            Banco whisper = null;
+
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select abertura, totalDia, dataFundo from fundoCaixa where dataFundo >= @dti and dataFundo <= @dtf";
+                whisper.comando.Parameters.Add("@dti", NpgsqlDbType.Date).Value = dataI;
+                whisper.comando.Parameters.Add("@dtf", NpgsqlDbType.Date).Value = dataF;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Abertura";
+                whisper.tabela.Columns[1].ColumnName = "Total do Dia";
+                whisper.tabela.Columns[2].ColumnName = "Data";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar fundoCaixa: " + ex.Message);
+            }
+        }
+
+
+        public DataTable buscarHoje()
         {
             Banco whisper = null;
             try

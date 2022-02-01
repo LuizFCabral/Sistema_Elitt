@@ -21,4 +21,9 @@ namespace Sistema_Elitt
         //Aceitar só numeros
     }
 
+    public static class Global
+    {
+        public static string abertura;
+    }
+
 }
