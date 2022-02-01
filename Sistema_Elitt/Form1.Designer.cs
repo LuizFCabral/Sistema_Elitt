@@ -30,6 +30,7 @@ namespace Sistema_Elitt
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.caixaDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProd = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConsulta = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@ namespace Sistema_Elitt
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoVenda = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.caixaDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarFC = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -66,12 +67,20 @@ namespace Sistema_Elitt
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caixaDoDiaToolStripMenuItem,
             this.btnProd,
-            this.btnConsulta});
+            this.btnConsulta,
+            this.btnConsultarFC});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1282, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // caixaDoDiaToolStripMenuItem
+            // 
+            this.caixaDoDiaToolStripMenuItem.Name = "caixaDoDiaToolStripMenuItem";
+            this.caixaDoDiaToolStripMenuItem.Size = new System.Drawing.Size(108, 25);
+            this.caixaDoDiaToolStripMenuItem.Text = "Caixa do Dia";
+            this.caixaDoDiaToolStripMenuItem.Click += new System.EventHandler(this.caixaDoDiaToolStripMenuItem_Click);
             // 
             // btnProd
             // 
@@ -333,12 +342,12 @@ namespace Sistema_Elitt
             this.label3.TabIndex = 24;
             this.label3.Text = "Tipo da Venda";
             // 
-            // caixaDoDiaToolStripMenuItem
+            // btnConsultarFC
             // 
-            this.caixaDoDiaToolStripMenuItem.Name = "caixaDoDiaToolStripMenuItem";
-            this.caixaDoDiaToolStripMenuItem.Size = new System.Drawing.Size(108, 25);
-            this.caixaDoDiaToolStripMenuItem.Text = "Caixa do Dia";
-            this.caixaDoDiaToolStripMenuItem.Click += new System.EventHandler(this.caixaDoDiaToolStripMenuItem_Click);
+            this.btnConsultarFC.Name = "btnConsultarFC";
+            this.btnConsultarFC.Size = new System.Drawing.Size(199, 25);
+            this.btnConsultarFC.Text = "Consultar Fundo de Caixa";
+            this.btnConsultarFC.Click += new System.EventHandler(this.btnConsultarFC_Click);
             // 
             // Form1
             // 
@@ -358,7 +367,7 @@ namespace Sistema_Elitt
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Caixa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -399,6 +408,7 @@ namespace Sistema_Elitt
         private System.Windows.Forms.ComboBox cmbTipoVenda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem caixaDoDiaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnConsultarFC;
     }
 }
 

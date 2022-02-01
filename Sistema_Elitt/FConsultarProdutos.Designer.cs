@@ -77,7 +77,7 @@ namespace Sistema_Elitt
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvListaProdutos);
             this.Name = "FConsultarProdutos";
-            this.Text = "FProdutos";
+            this.Text = "Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProdutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

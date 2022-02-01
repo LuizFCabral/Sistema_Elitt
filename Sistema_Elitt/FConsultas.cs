@@ -191,10 +191,5 @@ namespace Sistema_Elitt
 
         }
 
-        private void btnConsultarFC_Click(object sender, EventArgs e)
-        {
-            FConsultarFC f = new FConsultarFC();
-            f.Show();
-        }
     }
 }

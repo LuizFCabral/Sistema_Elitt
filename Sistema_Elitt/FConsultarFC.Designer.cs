@@ -126,7 +126,7 @@
             this.Controls.Add(this.dgvFundoCaixa);
             this.Name = "FConsultarFC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FConsultarFC";
+            this.Text = "Consultar Fundo de Caixa";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFundoCaixa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

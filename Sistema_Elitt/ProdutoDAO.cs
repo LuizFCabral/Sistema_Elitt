@@ -69,6 +69,10 @@ namespace Sistema_Elitt
                 whisper.tabela = new DataTable();
                 whisper.tabela.Load(whisper.dreader);
                 Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Código";
+                whisper.tabela.Columns[1].ColumnName = "Descrição";
+                whisper.tabela.Columns[2].ColumnName = "Preço";
+                whisper.tabela.Columns[3].ColumnName = "Quantidade";
                 return (whisper.tabela);
             }
             catch (Exception ex)
@@ -160,6 +164,10 @@ namespace Sistema_Elitt
                 whisper.tabela = new DataTable();
                 whisper.tabela.Load(whisper.dreader); //converte a tabela do postgres para a formatação do csharp
                 Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Código";
+                whisper.tabela.Columns[1].ColumnName = "Descrição";
+                whisper.tabela.Columns[2].ColumnName = "Preço";
+                whisper.tabela.Columns[3].ColumnName = "Quantidade";
                 return (whisper.tabela);
             }
             catch (Exception ex)
@@ -212,6 +220,7 @@ namespace Sistema_Elitt
                 Banco.conexao.Close();
                 if (obj == null)
                     throw new Exception("Código inexistente.");
+                
                 return (obj);
             }
             catch (Exception ex)

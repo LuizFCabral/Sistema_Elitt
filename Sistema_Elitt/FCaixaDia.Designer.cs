@@ -40,8 +40,8 @@
             this.btnFinalizarCaixa = new System.Windows.Forms.Button();
             this.lblTotalDia = new System.Windows.Forms.Label();
             this.gpbItensVenda = new System.Windows.Forms.GroupBox();
-            this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.lblTotalVenda = new System.Windows.Forms.Label();
+            this.dgvProdutosVenda = new System.Windows.Forms.DataGridView();
             this.gpbCartCred.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCartCred)).BeginInit();
             this.gpbCartDeb.SuspendLayout();
@@ -197,6 +197,16 @@
             this.gpbItensVenda.Text = "Itens da Venda";
             this.gpbItensVenda.Visible = false;
             // 
+            // lblTotalVenda
+            // 
+            this.lblTotalVenda.AutoSize = true;
+            this.lblTotalVenda.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.lblTotalVenda.Location = new System.Drawing.Point(15, 259);
+            this.lblTotalVenda.Name = "lblTotalVenda";
+            this.lblTotalVenda.Size = new System.Drawing.Size(90, 16);
+            this.lblTotalVenda.TabIndex = 31;
+            this.lblTotalVenda.Text = "Valor total: R$";
+            // 
             // dgvProdutosVenda
             // 
             this.dgvProdutosVenda.AllowUserToAddRows = false;
@@ -212,16 +222,6 @@
             this.dgvProdutosVenda.Size = new System.Drawing.Size(415, 200);
             this.dgvProdutosVenda.TabIndex = 17;
             this.dgvProdutosVenda.TabStop = false;
-            // 
-            // lblTotalVenda
-            // 
-            this.lblTotalVenda.AutoSize = true;
-            this.lblTotalVenda.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.lblTotalVenda.Location = new System.Drawing.Point(15, 259);
-            this.lblTotalVenda.Name = "lblTotalVenda";
-            this.lblTotalVenda.Size = new System.Drawing.Size(90, 16);
-            this.lblTotalVenda.TabIndex = 31;
-            this.lblTotalVenda.Text = "Valor total: R$";
             // 
             // FCaixaDia
             // 
@@ -239,7 +239,7 @@
             this.Controls.Add(this.gpbCartCred);
             this.Name = "FCaixaDia";
             this.ShowIcon = false;
-            this.Text = "FCaixaDia";
+            this.Text = "Fundo de Caixa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MouseEnter += new System.EventHandler(this.FCaixaDia_MouseEnter);
             this.gpbCartCred.ResumeLayout(false);
