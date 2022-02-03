@@ -38,8 +38,6 @@ namespace Sistema_Elitt
             this.lblTotalVenda = new System.Windows.Forms.Label();
             this.gpbVendasD = new System.Windows.Forms.GroupBox();
             this.dgvVendasD = new System.Windows.Forms.DataGridView();
-            this.cmbFiltro = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +47,11 @@ namespace Sistema_Elitt
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpDataF = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnBuscarPData = new System.Windows.Forms.Button();
+            this.dtpDataI = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).BeginInit();
             this.gpbVendas.SuspendLayout();
@@ -96,12 +99,13 @@ namespace Sistema_Elitt
             this.gpbVendas.Controls.Add(this.cmbCredDeb);
             this.gpbVendas.Controls.Add(this.dgvVendas);
             this.gpbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendas.Location = new System.Drawing.Point(10, 146);
+            this.gpbVendas.Location = new System.Drawing.Point(11, 132);
             this.gpbVendas.Name = "gpbVendas";
             this.gpbVendas.Size = new System.Drawing.Size(451, 448);
             this.gpbVendas.TabIndex = 18;
             this.gpbVendas.TabStop = false;
             this.gpbVendas.Text = "Cartão";
+            this.gpbVendas.Enter += new System.EventHandler(this.gpbVendas_Enter);
             // 
             // label1
             // 
@@ -134,12 +138,13 @@ namespace Sistema_Elitt
             this.gpbItensVenda.Controls.Add(this.lblTotalVenda);
             this.gpbItensVenda.Controls.Add(this.dgvProdutosVenda);
             this.gpbItensVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbItensVenda.Location = new System.Drawing.Point(940, 146);
+            this.gpbItensVenda.Location = new System.Drawing.Point(941, 132);
             this.gpbItensVenda.Name = "gpbItensVenda";
             this.gpbItensVenda.Size = new System.Drawing.Size(410, 448);
             this.gpbItensVenda.TabIndex = 19;
             this.gpbItensVenda.TabStop = false;
             this.gpbItensVenda.Text = "Itens da venda";
+            this.gpbItensVenda.Enter += new System.EventHandler(this.gpbItensVenda_Enter);
             // 
             // lblTotalVenda
             // 
@@ -155,12 +160,13 @@ namespace Sistema_Elitt
             // 
             this.gpbVendasD.Controls.Add(this.dgvVendasD);
             this.gpbVendasD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbVendasD.Location = new System.Drawing.Point(467, 146);
+            this.gpbVendasD.Location = new System.Drawing.Point(468, 132);
             this.gpbVendasD.Name = "gpbVendasD";
             this.gpbVendasD.Size = new System.Drawing.Size(451, 448);
             this.gpbVendasD.TabIndex = 20;
             this.gpbVendasD.TabStop = false;
             this.gpbVendasD.Text = "Dinheiro";
+            this.gpbVendasD.Enter += new System.EventHandler(this.gpbVendasD_Enter);
             // 
             // dgvVendasD
             // 
@@ -179,129 +185,166 @@ namespace Sistema_Elitt
             this.dgvVendasD.TabStop = false;
             this.dgvVendasD.DoubleClick += new System.EventHandler(this.dgvVendasD_DoubleClick);
             // 
-            // cmbFiltro
-            // 
-            this.cmbFiltro.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.cmbFiltro.AutoCompleteCustomSource.AddRange(new string[] {
-            ""});
-            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Items.AddRange(new object[] {
-            "Dia",
-            "Mês",
-            "Ano",
-            "Todas as vendas"});
-            this.cmbFiltro.Location = new System.Drawing.Point(19, 100);
-            this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(126, 28);
-            this.cmbFiltro.TabIndex = 1;
-            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Filtro da consulta";
-            // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(48, 642);
+            this.lbl2.Location = new System.Drawing.Point(49, 628);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(117, 40);
             this.lbl2.TabIndex = 23;
             this.lbl2.Text = "Total de Venda\r\n    por cartão";
+            this.lbl2.Click += new System.EventHandler(this.lbl2_Click);
             // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(261, 642);
+            this.lbl3.Location = new System.Drawing.Point(262, 628);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(117, 40);
             this.lbl3.TabIndex = 24;
             this.lbl3.Text = "Total de Venda\r\n  por dinheiro\r\n";
+            this.lbl3.Click += new System.EventHandler(this.lbl3_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(477, 642);
+            this.label3.Location = new System.Drawing.Point(478, 628);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 20);
             this.label3.TabIndex = 25;
             this.label3.Text = "Total de todas as Venda";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblTotalVendaC
             // 
             this.lblTotalVendaC.AutoSize = true;
             this.lblTotalVendaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVendaC.Location = new System.Drawing.Point(171, 651);
+            this.lblTotalVendaC.Location = new System.Drawing.Point(172, 637);
             this.lblTotalVendaC.Name = "lblTotalVendaC";
             this.lblTotalVendaC.Size = new System.Drawing.Size(34, 20);
             this.lblTotalVendaC.TabIndex = 26;
             this.lblTotalVendaC.Text = "R$ ";
+            this.lblTotalVendaC.Click += new System.EventHandler(this.lblTotalVendaC_Click);
             // 
             // lblTotalVendaD
             // 
             this.lblTotalVendaD.AutoSize = true;
             this.lblTotalVendaD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVendaD.Location = new System.Drawing.Point(384, 651);
+            this.lblTotalVendaD.Location = new System.Drawing.Point(385, 637);
             this.lblTotalVendaD.Name = "lblTotalVendaD";
             this.lblTotalVendaD.Size = new System.Drawing.Size(34, 20);
             this.lblTotalVendaD.TabIndex = 27;
             this.lblTotalVendaD.Text = "R$ ";
+            this.lblTotalVendaD.Click += new System.EventHandler(this.lblTotalVendaD_Click);
             // 
             // lblTotalDasVendas
             // 
             this.lblTotalDasVendas.AutoSize = true;
             this.lblTotalDasVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDasVendas.Location = new System.Drawing.Point(665, 642);
+            this.lblTotalDasVendas.Location = new System.Drawing.Point(666, 628);
             this.lblTotalDasVendas.Name = "lblTotalDasVendas";
             this.lblTotalDasVendas.Size = new System.Drawing.Size(34, 20);
             this.lblTotalDasVendas.TabIndex = 28;
             this.lblTotalDasVendas.Text = "R$ ";
+            this.lblTotalDasVendas.Click += new System.EventHandler(this.lblTotalDasVendas_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(161, 651);
+            this.label4.Location = new System.Drawing.Point(162, 637);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 20);
             this.label4.TabIndex = 29;
             this.label4.Text = ":";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(374, 651);
+            this.label5.Location = new System.Drawing.Point(375, 637);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 20);
             this.label5.TabIndex = 30;
             this.label5.Text = ":";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(653, 642);
+            this.label6.Location = new System.Drawing.Point(654, 628);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 20);
             this.label6.TabIndex = 31;
             this.label6.Text = ":";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(366, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Data final";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // dtpDataF
+            // 
+            this.dtpDataF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataF.Location = new System.Drawing.Point(370, 59);
+            this.dtpDataF.Name = "dtpDataF";
+            this.dtpDataF.Size = new System.Drawing.Size(322, 26);
+            this.dtpDataF.TabIndex = 35;
+            this.dtpDataF.ValueChanged += new System.EventHandler(this.dtpDataF_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 20);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Data início";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // btnBuscarPData
+            // 
+            this.btnBuscarPData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPData.Location = new System.Drawing.Point(698, 56);
+            this.btnBuscarPData.Name = "btnBuscarPData";
+            this.btnBuscarPData.Size = new System.Drawing.Size(50, 37);
+            this.btnBuscarPData.TabIndex = 33;
+            this.btnBuscarPData.Text = "🔎";
+            this.btnBuscarPData.UseVisualStyleBackColor = true;
+            this.btnBuscarPData.Click += new System.EventHandler(this.btnBuscarPData_Click);
+            // 
+            // dtpDataI
+            // 
+            this.dtpDataI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataI.Location = new System.Drawing.Point(27, 59);
+            this.dtpDataI.Name = "dtpDataI";
+            this.dtpDataI.Size = new System.Drawing.Size(322, 26);
+            this.dtpDataI.TabIndex = 32;
+            this.dtpDataI.ValueChanged += new System.EventHandler(this.dtpDataI_ValueChanged);
             // 
             // FConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1364, 749);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtpDataF);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnBuscarPData);
+            this.Controls.Add(this.dtpDataI);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -311,15 +354,12 @@ namespace Sistema_Elitt
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.lbl2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.gpbVendasD);
             this.Controls.Add(this.gpbItensVenda);
             this.Controls.Add(this.gpbVendas);
             this.Name = "FConsultas";
             this.Text = "Conulta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FConsultas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosVenda)).EndInit();
             this.gpbVendas.ResumeLayout(false);
@@ -342,8 +382,6 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label lblTotalVenda;
         private System.Windows.Forms.GroupBox gpbVendasD;
         private System.Windows.Forms.DataGridView dgvVendasD;
-        private System.Windows.Forms.ComboBox cmbFiltro;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.Label label3;
@@ -355,5 +393,10 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCredDeb;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpDataF;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnBuscarPData;
+        private System.Windows.Forms.DateTimePicker dtpDataI;
     }
 }

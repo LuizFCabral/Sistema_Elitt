@@ -32,9 +32,9 @@ namespace Sistema_Elitt
             double totalCC=0, totalCD=0, totalD=0;
             try
             {
-                dgvCartCred.DataSource = daoV.listarVendaTipoData("DESC", "cartao/credito", "day");
-                dgvCartDeb.DataSource = daoV.listarVendaTipoData("DESC", "cartao/debito", "day");
-                dgvDinheiro.DataSource = daoV.listarVendaTipoData("DESC", "dinheiro", "day");
+                dgvCartCred.DataSource = daoV.listarVendaHoje("DESC", "cartao/credito");
+                dgvCartDeb.DataSource = daoV.listarVendaHoje("DESC", "cartao/debito");
+                dgvDinheiro.DataSource = daoV.listarVendaHoje("DESC", "dinheiro");
 
                 for(int i=0; i < dgvCartCred.Rows.Count; i++)
                 {

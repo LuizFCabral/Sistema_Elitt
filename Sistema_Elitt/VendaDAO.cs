@@ -77,14 +77,14 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao listar venda: " + ex.Message);
             }
         }
-        public DataTable listarVendaTipoData(string direcao, string tipo, string filtro)
+        public DataTable listarVendaHoje(string direcao, string tipo)
         {
             Banco whisper = null;
 
             try
             {
                 whisper = new Banco();
-                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda where tipo=@tipo and extract("+filtro+ " from datav) = extract(" + filtro + " from current_date) order by datav " + direcao;
+                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda where tipo=@tipo and extract(day from datav) = extract(day from current_date) order by datav " + direcao;
                 whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = tipo;
                 whisper.dreader = whisper.comando.ExecuteReader();
                 whisper.tabela = new DataTable();
@@ -101,6 +101,36 @@ namespace Sistema_Elitt
                 throw new Exception("Erro ao listar venda: " + ex.Message);
             }
         }
+
+
+        public DataTable listarVendaTipoData(string direcao, string tipo, DateTime dataI, DateTime dataF)
+        {
+            Banco whisper = null;
+
+            try
+            {
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select cod, tipo, total, datav from venda where tipo=@tipo and datav >= @dti and datav <= @dtf order by datav " + direcao;
+                whisper.comando.Parameters.Add("@tipo", NpgsqlDbType.Varchar).Value = tipo; 
+                whisper.comando.Parameters.Add("@dti", NpgsqlDbType.Date).Value = dataI;
+                whisper.comando.Parameters.Add("@dtf", NpgsqlDbType.Date).Value = dataF;
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Código";
+                whisper.tabela.Columns[1].ColumnName = "Tipo";
+                whisper.tabela.Columns[2].ColumnName = "Total";
+                whisper.tabela.Columns[3].ColumnName = "Data da venda";
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar venda: " + ex.Message);
+            }
+        }
+
+
 
         public int alterar(Venda obj)
         {

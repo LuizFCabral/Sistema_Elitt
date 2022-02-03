@@ -20,10 +20,9 @@ namespace Sistema_Elitt
             {
                 VendaDAO dao = new VendaDAO();
                 gpbItensVenda.Hide();
-                cmbFiltro.SelectedIndex = 0;
                 cmbCredDeb.SelectedIndex = 0;
-                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", "cartao/credito", "day");
-                dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", "day");
+                dgvVendas.DataSource = dao.listarVendaTipo("DESC", "cartao/credito");
+                dgvVendasD.DataSource = dao.listarVendaTipo("DESC", "dinheiro");
                 somatoriaVendas();
             }
             catch(Exception ex)
@@ -89,54 +88,6 @@ namespace Sistema_Elitt
             }
         }
 
-        private void FConsultas_Load(object sender, EventArgs e)
-        {
-            int w = Screen.PrimaryScreen.Bounds.Width;
-            int h = Screen.PrimaryScreen.Bounds.Height;
-            this.Location = new Point(0, 0);
-            this.Size = new Size(w, h);
-        }
-
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            VendaDAO dao = new VendaDAO();
-            string filtro = cmbFiltro.Text;
-            string tipo = cmbCredDeb.Text;
-            bool todas = false;
-            try
-            {
-                if (filtro == "Dia")
-                    filtro = "day";
-                else {
-                    if (filtro == "Mês")
-                        filtro = "month";
-                    else
-                    {
-                        if(filtro=="Ano")
-                            filtro = "year";
-                        else
-                        {
-                            if(filtro =="Todas as vendas")
-                                todas = true;
-                        }
-                    }
-                }
-
-                if (todas)
-                {
-                    dgvVendas.DataSource = dao.listarVendaTipo("DESC", tipo);
-                    dgvVendasD.DataSource = dao.listarVendaTipo("DESC", "dinheiro");
-                }
-                else
-                {
-                    dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, filtro);
-                    dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", filtro);    
-                }
-
-                somatoriaVendas();
-            }
-            catch(Exception ex) { MessageBox.Show(ex.Message); }
-        }
 
         private void dgvVendasD_DoubleClick(object sender, EventArgs e)
         {
@@ -161,35 +112,137 @@ namespace Sistema_Elitt
 
         private void cmbCredDeb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string filtro = cmbFiltro.Text;
             string tipo = cmbCredDeb.Text;
             VendaDAO dao = new VendaDAO();
+            DateTime dti, dtf;
+
             try
             {
-                if (filtro == "Dia")
-                    filtro = "day";
-                else
-                {
-                    if (filtro == "Mês")
-                        filtro = "month";
-                    else
-                    {
-                        if (filtro == "Ano")
-                            filtro = "year";
-                    }
-                }
+                dti = dtpDataI.Value;
+                dtf = dtpDataF.Value;
 
                 if (tipo == "Crédito")
                     tipo = "cartao/credito";
                 else
                     tipo = "cartao/debito";
 
-                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, filtro);
+                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, dti, dtf);
                 somatoriaVendas();
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 
+        private void btnBuscarPData_Click(object sender, EventArgs e)
+        {
+            VendaDAO dao = new VendaDAO();
+            DateTime dti, dtf;
+            string tipo = cmbCredDeb.Text;
+
+            try
+            {
+
+                dti = dtpDataI.Value;
+                dtf = dtpDataF.Value;
+
+                if(tipo == "Crédito")
+                    tipo = "cartao/credito";
+                else
+                    tipo = "cartao/debito";
+
+                dgvVendas.DataSource = dao.listarVendaTipoData("DESC", tipo, dti, dtf);
+                dgvVendasD.DataSource = dao.listarVendaTipoData("DESC", "dinheiro", dti, dtf);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalDasVendas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalVendaD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalVendaC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpbVendasD_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpbItensVenda_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpbVendas_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiltroTodos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDataF_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDataI_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
