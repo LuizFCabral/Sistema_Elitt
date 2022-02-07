@@ -74,6 +74,12 @@ namespace Sistema_Elitt
             FConsultarFC f = new FConsultarFC();
             f.Show();
         }
+
+        private void btnCaixadoMes_Click(object sender, EventArgs e)
+        {
+            FundoCaixaMes f = new FundoCaixaMes();
+            f.Show();
+        }
         //Menu
 
         //Soma total

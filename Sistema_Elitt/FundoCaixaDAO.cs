@@ -127,5 +127,31 @@ namespace Sistema_Elitt
             }
         }
 
+        public DataTable listarFundoCaixaMes()
+        {
+            Banco whisper = null;
+
+            try
+            {
+
+
+                whisper = new Banco();
+                whisper.comando.CommandText = "Select abertura, totalDia, dataFundo from fundoCaixa where extract(month from dataFundo) = extract(month from current_date) order by dataFundo DESC";
+                whisper.dreader = whisper.comando.ExecuteReader();
+                whisper.tabela = new DataTable();
+                whisper.tabela.Load(whisper.dreader);
+                Banco.conexao.Close();
+                whisper.tabela.Columns[0].ColumnName = "Abertura";
+                whisper.tabela.Columns[1].ColumnName = "Total do Dia";
+                whisper.tabela.Columns[2].ColumnName = "Data";
+
+                return (whisper.tabela);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao listar venda: " + ex.Message);
+            }
+        }
+
     }
 }

@@ -31,8 +31,10 @@ namespace Sistema_Elitt
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.caixaDoDiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCaixadoMes = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProd = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConsulta = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarFC = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.gpbItens = new System.Windows.Forms.GroupBox();
@@ -55,7 +57,6 @@ namespace Sistema_Elitt
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoVenda = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConsultarFC = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenda)).BeginInit();
@@ -66,6 +67,7 @@ namespace Sistema_Elitt
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caixaDoDiaToolStripMenuItem,
+            this.btnCaixadoMes,
             this.btnProd,
             this.btnConsulta,
             this.btnConsultarFC});
@@ -82,6 +84,13 @@ namespace Sistema_Elitt
             this.caixaDoDiaToolStripMenuItem.Text = "Caixa do Dia";
             this.caixaDoDiaToolStripMenuItem.Click += new System.EventHandler(this.caixaDoDiaToolStripMenuItem_Click);
             // 
+            // btnCaixadoMes
+            // 
+            this.btnCaixadoMes.Name = "btnCaixadoMes";
+            this.btnCaixadoMes.Size = new System.Drawing.Size(114, 25);
+            this.btnCaixadoMes.Text = "Caixa do Mês";
+            this.btnCaixadoMes.Click += new System.EventHandler(this.btnCaixadoMes_Click);
+            // 
             // btnProd
             // 
             this.btnProd.Name = "btnProd";
@@ -95,6 +104,13 @@ namespace Sistema_Elitt
             this.btnConsulta.Size = new System.Drawing.Size(90, 25);
             this.btnConsulta.Text = "Consultas";
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // btnConsultarFC
+            // 
+            this.btnConsultarFC.Name = "btnConsultarFC";
+            this.btnConsultarFC.Size = new System.Drawing.Size(199, 25);
+            this.btnConsultarFC.Text = "Consultar Fundo de Caixa";
+            this.btnConsultarFC.Click += new System.EventHandler(this.btnConsultarFC_Click);
             // 
             // txtTotal
             // 
@@ -342,13 +358,6 @@ namespace Sistema_Elitt
             this.label3.TabIndex = 24;
             this.label3.Text = "Tipo da Venda";
             // 
-            // btnConsultarFC
-            // 
-            this.btnConsultarFC.Name = "btnConsultarFC";
-            this.btnConsultarFC.Size = new System.Drawing.Size(199, 25);
-            this.btnConsultarFC.Text = "Consultar Fundo de Caixa";
-            this.btnConsultarFC.Click += new System.EventHandler(this.btnConsultarFC_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +418,7 @@ namespace Sistema_Elitt
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem caixaDoDiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnConsultarFC;
+        private System.Windows.Forms.ToolStripMenuItem btnCaixadoMes;
     }
 }
 

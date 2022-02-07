@@ -50,7 +50,7 @@
             this.dgvFundoCaixa.ReadOnly = true;
             this.dgvFundoCaixa.RowHeadersVisible = false;
             this.dgvFundoCaixa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFundoCaixa.Size = new System.Drawing.Size(809, 468);
+            this.dgvFundoCaixa.Size = new System.Drawing.Size(796, 475);
             this.dgvFundoCaixa.TabIndex = 16;
             this.dgvFundoCaixa.TabStop = false;
             // 
